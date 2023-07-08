@@ -4,6 +4,7 @@ import symbol from './icons/symbol.svg?raw'
 import discord from './icons/discord.svg?raw'
 import github from './icons/github.svg?raw'
 import twitch from './icons/twitch.svg?raw'
+import footer from '@/assets/footer-graphic.jpeg'
 ---
 
 <hr
@@ -11,7 +12,8 @@ import twitch from './icons/twitch.svg?raw'
 />
 <footer class='relative w-screen h-56 lg:h-[350px] overflow-hidden'>
   <img
-    src='/footer-graphic.jpeg'
+    src={footer.src}
+    alt='Footer graphic'
     class='absolute inset-0 h-56 lg:h-[470px] w-screen object-cover object-bottom z-0'
   />
   <div class='footer-fade'></div>
@@ -25,20 +27,34 @@ import twitch from './icons/twitch.svg?raw'
       >
     </p>
     <nav aria-labelledby='footer-links' class='flex items-center gap-8'>
-      <a class='hover:underline' href='/about'>About</a>
-      <a class='hover:underline' href={GITHUB_URL} rel='external nofollow'
-        >Code</a
+      <a class='hover:underline' href='/about' aria-label='About link'>About</a>
+      <a
+        class='hover:underline'
+        href={GITHUB_URL}
+        aria-label='GitHub link'
+        rel='external nofollow'>GitHub</a
       >
     </nav>
     <nav aria-labelledby='footer-social-links' class='flex items-center gap-8'>
-      <a class='hover:underline' href={DISCORD_URL} rel='external nofollow'>
+      <a
+        class='hover:underline'
+        href={DISCORD_URL}
+        rel='external nofollow'
+        aria-label='Discord link'
+      >
         <Fragment set:html={discord} />
       </a>
-      <a class='hover:underline' href={GITHUB_URL} rel='external nofollow'
-        ><Fragment set:html={github} /></a
+      <a
+        class='hover:underline'
+        href={GITHUB_URL}
+        rel='external nofollow'
+        aria-label='GitHub link'><Fragment set:html={github} /></a
       >
-      <a class='hover:underline' href={TWITCH_URL} rel='external nofollow'
-        ><Fragment set:html={twitch} /></a
+      <a
+        class='hover:underline'
+        href={TWITCH_URL}
+        rel='external nofollow'
+        aria-label='Twitch link'><Fragment set:html={twitch} /></a
       >
     </nav>
   </div>

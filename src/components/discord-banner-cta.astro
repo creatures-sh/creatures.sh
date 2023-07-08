@@ -23,7 +23,11 @@ const members = [member1, member2, member3, member4, member5, member6]
       <div class='flex pl-2'>
         {
           members.map((member) => (
-            <img src={member} class='w-10 h-10 -ml-2 rounded-full' />
+            <img
+              src={member.src}
+              alt='A discord member profile picture'
+              class='w-10 h-10 -ml-2 rounded-full'
+            />
           ))
         }
       </div>
