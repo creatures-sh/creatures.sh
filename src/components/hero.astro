@@ -1,0 +1,85 @@
+---
+import { DISCORD_URL, DISCORD_MEMBERS, TWITCH_URL } from '@/config'
+---
+
+<div class='min-h-screen'>
+  <div
+    class='absolute inset-0 flex justify-center pt-20 lg:pt-32 xl:pt-52 px-4'
+  >
+    <img
+      src='/hero.jpg'
+      class='w-screen h-screen object-bottom object-cover absolute inset-0 z-0 animate-smooth-enter-top'
+    />
+    <div class='hero-backdrop'></div>
+    <div class='bottom-fade'></div>
+    <div
+      class='relative flex flex-col gap-10 lg:gap-20 py-6 z-10 animate-smooth-enter-bottom'
+    >
+      <div class='flex flex-col items-center'>
+        <h1
+          class='logo-gradient font-bold text-5xl lg:text-[96px] leading-relaxed'
+        >
+          creatures.dev
+        </h1>
+        <p class='text-secondary max-lg:text-center lg:text-2xl tracking-tight'>
+          A community of curious developers excited about code
+        </p>
+      </div>
+      <div class='flex flex-col items-center gap-4'>
+        <div class='flex gap-5'>
+          <a
+            class='button hero-cta hero-discord'
+            href={DISCORD_URL}
+            rel='external nofollow'>Discord</a
+          >
+          <a
+            class='button hero-cta hero-twitch'
+            href={TWITCH_URL}
+            rel='external nofollow'>Twitch</a
+          >
+        </div>
+        <p class='max-lg:text-center'>
+          Join {DISCORD_MEMBERS}+ creatures. Learn about <a
+            href='/about'
+            class='text-link font-bold hover:underline'
+            >our philosophy & values</a
+          >.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-backdrop {
+    @apply absolute inset-0 z-10;
+    background: radial-gradient(
+      40% 70% at 50% 0%,
+      rgba(0, 2, 7, 0.8) 40%,
+      rgba(0, 2, 7, 0.7) 80%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  @media (max-width: theme('screens.lg')) {
+    .hero-backdrop {
+      @apply bg-gradient-to-b from-[theme('colors.rich-black')] to-transparent to-80%;
+    }
+  }
+  .bottom-fade {
+    @apply absolute inset-x-0 bottom-0 z-10 h-24;
+    background: linear-gradient(
+      180deg,
+      rgba(2, 2, 9, 0) 0%,
+      theme('colors.rich-black') 100%
+    );
+  }
+  .hero-cta {
+    @apply text-lg lg:text-2xl px-12 lg:px-24 py-3 lg:py-6;
+  }
+  .hero-discord {
+    @apply bg-discord hover:bg-discord-hover;
+  }
+  .hero-twitch {
+    @apply bg-twitch hover:bg-twitch-hover;
+  }
+</style>

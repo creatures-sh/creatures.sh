@@ -1,0 +1,29 @@
+---
+import { GITHUB_URL } from '@/config'
+---
+
+<div class='blurry w-screen md:px-4 z-50 sticky top-0'>
+  <header
+    class='container mx-auto w-full flex max-md:flex-col max-md:items-center max-md:gap-4 md:justify-between py-3 md:py-6 animate-[fade-in_1.2s_ease-out]'
+  >
+    <a class='logo-gradient font-heading text-2xl w-[150px]' href='/'
+      >creatures.dev</a
+    >
+    <nav class='flex items-center gap-8'>
+      <!--       <a class="hover:underline" href="/blog">Blog</a> -->
+      <a class='hover:underline' href='/about'>About</a>
+      <a class='hover:underline' href={GITHUB_URL} rel='external nofollow'
+        >GitHub</a
+      >
+      <!-- -     <a class="hover:underline" href={YOUTUBE_URL}>Videos</a> -->
+    </nav>
+    <div class='max-md:hidden w-[150px]'></div>
+  </header>
+</div>
+
+<style>
+  .blurry {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+</style>

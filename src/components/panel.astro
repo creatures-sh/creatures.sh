@@ -1,0 +1,24 @@
+---
+import { twMerge, twJoin } from 'tailwind-merge'
+
+type Props = {
+  size?: 'sm' | 'md' | 'lg'
+  class?: string
+}
+
+const { size = 'md', class: classes } = Astro.props
+---
+
+<div
+  class={twMerge(
+    twJoin(
+      'bg-panel border-2 border-border overflow-hidden',
+      size === 'sm' && 'rounded-lg',
+      size === 'md' && 'rounded-2xl',
+      size === 'lg' && 'rounded-3xl',
+    ),
+    classes,
+  )}
+>
+  <slot />
+</div>

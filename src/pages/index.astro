@@ -1,15 +1,58 @@
 ---
+import Layout from '@/components/layout.astro'
+import Hero from '@/components/hero.astro'
+import DiscordBannerCTA from '@/components/discord-banner-cta.astro'
+import Panel from '@/components/panel.astro'
+import github from '@/components/icons/github.svg?raw'
+import twitch from '@/components/icons/twitch.svg?raw'
+import { GITHUB_URL, TWITCH_URL, LAST_STREAM_VOD } from '@/config'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Hero />
+  <div
+    class='flex flex-col gap-24 lg:gap-40 p-4 pb-24 lg:pb-40 lg:-mt-48 relative z-10 animate-smooth-enter-bottom'
+  >
+    <div
+      class='grid max-xl:grid-cols-2 xl:grid-cols-[300px_1fr_300px] items-center gap-6'
+    >
+      <Panel class='max-sm:col-span-2 flex flex-col p-8 gap-4 items-start'>
+        <h3 class='text-2xl'>Go to the project</h3>
+        <a
+          class='flex gap-2 py-2 px-4 md:px-8 button bg-white font-bold text-rich-black'
+          href={GITHUB_URL}
+          rel='external nofollow'
+        >
+          <Fragment set:html={github} />
+          GitHub
+        </a>
+      </Panel>
+      <Panel
+        size='lg'
+        class='max-xl:col-span-2 flex-1 max-xl:order-first aspect-video overflow-hidden'
+      >
+        <iframe
+          class='aspect-video'
+          width='100%'
+          height='100%'
+          src={LAST_STREAM_VOD}
+          title='YouTube video player'
+          frameborder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          allowfullscreen></iframe>
+      </Panel>
+      <Panel class='max-sm:col-span-2 flex flex-col p-8 gap-4 items-start'>
+        <h3 class='text-2xl'>Next episode</h3>
+        <a
+          class='flex gap-2 py-2 px-4 md:px-8 button bg-twitch hover:bg-twitch-hover font-bold text-white'
+          href={TWITCH_URL}
+          rel='external nofollow'
+        >
+          <Fragment set:html={twitch} />
+          Follow on Twitch
+        </a>
+      </Panel>
+    </div>
+    <DiscordBannerCTA />
+  </div>
+</Layout>

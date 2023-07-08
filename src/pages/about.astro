@@ -1,0 +1,117 @@
+---
+import Layout from '@/components/layout.astro'
+import AboutHero from '@/components/about-hero.astro'
+import ContributeBanner from '@/components/contribute-banner.astro'
+---
+
+<Layout>
+  <AboutHero />
+  <div
+    class='flex flex-col gap-10 md:gap-16 -mt-48 p-4 pb-24 lg:pb-40 relative z-10 animate-smooth-enter-bottom'
+  >
+    <div class='grid md:grid-cols-2 xl:px-40 gap-14'>
+      <div class='quote'>
+        <h2 class='quote-header'>Why octopus? 🐙</h2>
+        <p class='quote-body'>
+          The octopus is a perfect representation of the existence and purpose
+          of this community! Octopuses are one of the most intelligent ocean
+          creatures, and they learn and adapt very quick.
+        </p>
+        <p class='quote-body'>
+          Its symbolism pretty much encapsulates what we’re about. Selflessness,
+          intelligence, awareness, altruism, the ability to overcome challenging
+          solutions with creativity and intelligence.
+        </p>
+      </div>
+      <div class='quote'>
+        <h2 class='quote-header'>A community of practice</h2>
+        <p class='quote-body'>
+          As a community of practice, our purpose is to develop and nurture the
+          members’ skills and promote continuous learning. We believe that
+          knowledge is most valuable when it is shared, so our community serves
+          as a platform for the exchange of insights, ideas, and expertise.
+        </p>
+        <p class='quote-body'>
+          We motivate each other to create and share our own original content.
+          The Twitch channel, the blog, and the YouTube channel are our outlets
+          for putting out our content. Everyone is welcome to contribute.
+        </p>
+      </div>
+      <div class='quote'>
+        <h2 class='quote-header'>Open Source</h2>
+        <p class='quote-body'>
+          Everything we do is open source. Our content is open source. Our
+          website is open source. Our projects are open source. Why? Because
+          reading and understanding other people’s code makes you a better
+          coder. Because networking and collaborating with other people make you
+          a better human.
+        </p>
+      </div>
+      <div class='quote'>
+        <h2 class='quote-header'>Adaptability</h2>
+        <p class='quote-body'>
+          If you feel like you belong, then you belong. You make the choice. We
+          might differ in preferences of language, framework or tools. But, what
+          truly binds us together is the same vigorous passion we have for
+          experimenting and creating things.
+        </p>
+      </div>
+      <div class='quote'>
+        <h2 class='quote-header'>Variety</h2>
+        <p class='quote-body'>
+          The value is in the variety! We are curious and ambitious experts in
+          multiple topics from multiple generations. Whether you're a seasoned
+          pro or just starting out, your opinion and everyone else’s is always
+          welcomed. We all have the right to voice opinions, as long as we’re
+          doing it in a civilized manner.
+        </p>
+      </div>
+      <div class='quote'>
+        <h2 class='quote-header'>Selflessness</h2>
+        <p class='quote-body'>
+          We believe that the collective power of collaboration and shared
+          enthusiasm drives us to new heights. We cherish the moments of
+          discovery, the "aha" moments, and the breakthroughs that come when
+          minds converge. Here, you'll find a supportive network of like-minded
+          individuals who share your passion for honing their coding skills and
+          exploring the vast realms of technology.
+        </p>
+      </div>
+      <div class='quote'>
+        <h2 class='quote-header'>Altruism</h2>
+        <p class='quote-body'>
+          We understand that behind every username or profile picture is a
+          learner and a passionate individual. So, kindness, respect, and
+          altruism are the pillars that define us as the creatures we are. We
+          don’t step on each other’s feet, or gate-keep our ideas. It’s who we
+          are both inside and outside of this community. We care deeply about
+          each other's well-being, even if we don’t know each other personally.
+        </p>
+      </div>
+      <div class='quote'>
+        <h2 class='quote-header'>Creativity & Intelligence</h2>
+        <p class='quote-body'>
+          We get excited about code, and want to scream out our excitement. Our
+          motivation is intrinsic. We like to share our findings with the rest
+          of the community. We like to give feedback as much as we like to get
+          feedback. We’re not afraid to get our hands dirty. We’re practical
+          creatures. We like to solve our problems using creativity and
+          intelligence.
+        </p>
+      </div>
+    </div>
+    <ContributeBanner />
+  </div>
+</Layout>
+
+<style>
+  .quote {
+    @apply flex flex-col justify-center border-l-link border-l-4 gap-4 px-6 py-4;
+  }
+  .quote-header {
+    @apply text-2xl;
+  }
+  .quote-body {
+    @apply text-secondary;
+  }
+</style>

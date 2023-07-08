@@ -1,0 +1,57 @@
+@tailwind base;
+
+@layer base {
+  h1 {
+    font-size: 56px;
+    @apply font-heading;
+  }
+  h2 {
+    font-size: 40px;
+    letter-spacing: 0.01em;
+    @apply font-heading;
+  }
+  h3 {
+    font-size: 36px;
+    letter-spacing: 0.015em;
+    @apply font-heading;
+  }
+  h4 {
+    font-size: 28px;
+    letter-spacing: 0.02em;
+    @apply font-heading;
+  }
+  h5 {
+    font-size: 20px;
+    letter-spacing: 0.03em;
+    @apply font-heading;
+  }
+  h6 {
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    @apply font-heading;
+  }
+  p,
+  span,
+  a,
+  li,
+  label,
+  input,
+  textarea,
+  button {
+    @apply font-body;
+    font-weight: 300;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+.logo-gradient {
+  background: linear-gradient(180deg, #ffffff 34%, rgba(0, 117, 255, 0.01) 78%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.button {
+  @apply font-heading transition-all hover:-translate-y-1 duration-150 rounded-lg shadow-hero-cta;
+}

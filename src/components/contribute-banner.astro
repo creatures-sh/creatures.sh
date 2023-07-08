@@ -1,0 +1,31 @@
+---
+import { DISCORD_URL } from '@/config'
+import Panel from '@/components/panel.astro'
+import creature from '@/assets/contribute-banner-creature.jpg'
+---
+
+<Panel
+  class='flex max-sm:flex-col items-center gap-6 sm:gap-8 sm:pr-6 max-sm:pb-8'
+  size='md'
+>
+  <div
+    class='relative max-sm:w-full sm:h-24 lg:h-40 aspect-video overflow-hidden'
+  >
+    <img
+      src={creature}
+      class='w-full h-full absolute inset-0 object-cover object-bottom'
+    />
+    <div
+      class='absolute inset-0 hidden sm:block bg-gradient-to-r from-transparent via-transparent to-panel'
+    >
+    </div>
+  </div>
+  <h3
+    class='max-sm:px-4 max-sm:text-center flex-1 text-lg sm:text-xl lg:text-3xl'
+  >
+    You want to <span class='text-link font-heading'>contribute</span> to creatures.dev?
+  </h3>
+  <a href={DISCORD_URL} rel='external nofollow' class='button bg-link px-8 py-3'
+    >Let's chat!</a
+  >
+</Panel>
