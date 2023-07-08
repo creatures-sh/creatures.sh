@@ -14,9 +14,6 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ['@resvg/resvg-js'],
     },
-    esbuild: {
-      loader: 'file',
-    },
   },
 })
 export function rawFonts(ext) {

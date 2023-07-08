@@ -1,0 +1,2 @@
+[functions]
+external_node_modules = ['@resvg/resvg-js']
