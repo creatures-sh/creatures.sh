@@ -16,6 +16,9 @@ dependencies:
   '@resvg/resvg-js':
     specifier: ^2.4.1
     version: 2.4.1
+  '@resvg/resvg-js-linux-x64-gnu':
+    specifier: ^2.4.1
+    version: 2.4.1
   astro:
     specifier: ^2.8.0
     version: 2.8.0(@types/node@20.4.1)
@@ -991,7 +994,6 @@ packages:
     os: [linux]
     requiresBuild: true
     dev: false
-    optional: true
 
   /@resvg/resvg-js-linux-x64-musl@2.4.1:
     resolution: {integrity: sha512-0AMyZSICC1D7ge115cOZQW8Pcad6PjWuZkBFF3FJuSxC6Dgok0MQnLTs2MfMdKBlAcwO9dXsf3bv9tJZj8pATA==}
