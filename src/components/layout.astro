@@ -1,4 +1,5 @@
 ---
+import { SEO } from 'astro-seo'
 import 'cal-sans'
 import '@/styles/global.css'
 import Header from '@/components/header.astro'
@@ -6,22 +7,67 @@ import Footer from '@/components/footer.astro'
 
 type Props = {
   title?: string
+  description?: string
+  canonical?: string
+  ogImage?: {
+    template: string
+    data?: Record<string, any>
+  }
 }
 
 const title = Astro.props.title
   ? `${Astro.props.title} | creatures.dev`
   : 'creatures.dev'
+const { ogImage, description, canonical } = Astro.props
+
+const ogImageData = ogImage?.data ?? {}
+
+if (Astro.props.title) {
+  ogImageData.page = '/' + Astro.props.title.toLowerCase()
+}
+
+const ogImageUrl = `${Astro.url.origin}/og/${
+  ogImage?.template || 'default'
+}.png?${new URLSearchParams(ogImageData).toString()}`
+
+const canonicalURL =
+  canonical ?? new URL(Astro.url.pathname, Astro.site).toString()
 ---
 
 <html lang='en' class='dark'>
   <head>
     <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link
+      rel='icon'
+      href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐙</text></svg>'
+    />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <title>{title}</title>
     <link rel='preconnect' href='https://rsms.me/' />
     <link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
+    <link rel='sitemap' href='/sitemap-index.xml' />
+    <SEO
+      title={title}
+      description={description ||
+        'creatures.dev is an inclusive developer community that focuses on helping people learn and grow in a safe and welcoming environment.'}
+      canonical={canonicalURL}
+      twitter={{
+        creator: '@NikolovLazar',
+        site: canonicalURL,
+        card: 'summary_large_image',
+      }}
+      openGraph={{
+        basic: {
+          url: canonicalURL,
+          type: 'website',
+          title: title,
+          image: ogImageUrl,
+        },
+        image: {
+          alt: 'creatures.dev',
+        },
+      }}
+    />
   </head>
   <body class='min-h-screen overflow-x-hidden bg-rich-black text-white'>
     <Header />
