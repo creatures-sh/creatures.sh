@@ -13,9 +13,9 @@ export default defineConfig({
     plugins: [rawFonts(['.ttf'])],
     optimizeDeps: {
       exclude: ['@resvg/resvg-js'],
-      esbuildOptions: {
-        loader: { '.node': 'file' },
-      },
+    },
+    esbuild: {
+      loader: { '.node': 'file' },
     },
   },
 })
