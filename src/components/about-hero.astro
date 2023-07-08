@@ -1,4 +1,5 @@
 ---
+import aboutHero from '@/assets/about-hero.jpeg'
 ---
 
 <div class='h-[90vh] md:h-[80vh]'>
@@ -6,7 +7,7 @@
     class='absolute inset-0 flex justify-center pt-24 md:pt-20 lg:pt-32 xl:pt-52 px-4'
   >
     <img
-      src='/about-hero.jpeg'
+      src={aboutHero.src}
       class='w-screen h-screen object-bottom object-cover absolute inset-0 z-0 animate-smooth-enter-top'
     />
     <div class='hero-backdrop'></div>

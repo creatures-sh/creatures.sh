@@ -9,6 +9,9 @@ export default defineConfig({
   integrations: [tailwind(), sitemap()],
   output: 'hybrid',
   adapter: netlify(),
+  experimental: {
+    assets: true,
+  },
   vite: {
     plugins: [rawFonts(['.ttf'])],
     optimizeDeps: {
