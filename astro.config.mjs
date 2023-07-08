@@ -15,7 +15,7 @@ export default defineConfig({
       exclude: ['@resvg/resvg-js'],
     },
     esbuild: {
-      loader: { '.node': 'file' },
+      loader: '.node=file',
     },
   },
 })
