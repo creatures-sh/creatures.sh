@@ -1,5 +1,6 @@
 ---
 import { DISCORD_URL, DISCORD_MEMBERS } from '@/config'
+import { Image } from 'astro:assets'
 import member1 from '@/assets/discord-avatars/member-1.webp'
 import member2 from '@/assets/discord-avatars/member-2.webp'
 import member3 from '@/assets/discord-avatars/member-3.webp'
@@ -23,8 +24,10 @@ const members = [member1, member2, member3, member4, member5, member6]
       <div class='flex pl-2'>
         {
           members.map((member) => (
-            <img
-              src={member.src}
+            <Image
+              src={member}
+              width={80}
+              height={80}
               alt='A discord member profile picture'
               class='w-10 h-10 -ml-2 rounded-full'
             />
