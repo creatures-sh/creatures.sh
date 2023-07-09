@@ -10,8 +10,7 @@ type Props = {
   description?: string
   canonical?: string
   ogImage?: {
-    template: string
-    data?: Record<string, any>
+    slug: string
   }
 }
 
@@ -20,15 +19,7 @@ const title = Astro.props.title
   : 'creatures.dev'
 const { ogImage, description, canonical } = Astro.props
 
-const ogImageData = ogImage?.data ?? {}
-
-if (Astro.props.title) {
-  ogImageData.page = '/' + Astro.props.title.toLowerCase()
-}
-
-const ogImageUrl = `${Astro.url.origin}/og/${
-  ogImage?.template || 'default'
-}.png?${new URLSearchParams(ogImageData).toString()}`
+const ogImageUrl = `${Astro.url.origin}/og-${ogImage?.slug || 'index'}.png`
 
 const canonicalURL =
   canonical ?? new URL(Astro.url.pathname, Astro.site).toString()
