@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import { DISCORD_URL } from '@/config'
 import Panel from '@/components/panel.astro'
 import creature from '@/assets/contribute-banner-creature.jpg'
@@ -11,8 +12,11 @@ import creature from '@/assets/contribute-banner-creature.jpg'
   <div
     class='relative max-sm:w-full sm:h-24 lg:h-40 aspect-video overflow-hidden'
   >
-    <img
-      src={creature.src}
+    <Image
+      src={creature}
+      width={creature.width}
+      height={creature.height}
+      alt='An image of a creature from creatures.dev'
       class='w-full h-full absolute inset-0 object-cover object-bottom'
     />
     <div

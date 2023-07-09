@@ -1,12 +1,15 @@
 ---
+import { Image } from 'astro:assets'
 import { DISCORD_URL, DISCORD_MEMBERS, TWITCH_URL } from '@/config'
 import hero from '@/assets/hero.jpg'
 ---
 
 <div class='min-h-screen'>
   <div class='absolute inset-0 flex justify-center pt-20 lg:pt-24 px-4'>
-    <img
-      src={hero.src}
+    <Image
+      src={hero}
+      width={hero.width}
+      height={hero.height}
       alt='Hero graphic'
       class='w-screen h-screen object-bottom object-cover absolute inset-0 z-0 animate-smooth-enter-top'
     />
