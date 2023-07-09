@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import aboutHero from '@/assets/about-hero.jpeg'
 ---
 
@@ -6,8 +7,8 @@ import aboutHero from '@/assets/about-hero.jpeg'
   <div
     class='absolute inset-0 flex justify-center pt-24 md:pt-20 lg:pt-32 xl:pt-52 px-4'
   >
-    <img
-      src={aboutHero.src}
+    <Image
+      src={aboutHero}
       alt='About Hero Image'
       class='w-screen h-screen object-bottom object-cover absolute inset-0 z-0 animate-smooth-enter-top'
     />
