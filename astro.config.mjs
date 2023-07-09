@@ -1,14 +1,14 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
-import netlify from '@astrojs/netlify/functions'
+
+import { generateOG } from './src/integrations/og-generation'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://creatures.dev',
-  integrations: [tailwind(), sitemap()],
-  output: 'hybrid',
-  adapter: netlify(),
+  integrations: [tailwind(), sitemap(), generateOG()],
+  output: 'static',
   experimental: {
     assets: true,
   },
@@ -19,6 +19,7 @@ export default defineConfig({
     },
   },
 })
+
 export function rawFonts(ext) {
   return {
     name: 'vite-plugin-raw-fonts',
