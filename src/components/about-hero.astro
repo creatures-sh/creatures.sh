@@ -3,22 +3,20 @@ import { Image } from 'astro:assets'
 import aboutHero from '@/assets/about-hero.jpeg'
 ---
 
-<div class='h-[90vh] md:h-[80vh]'>
+<div class='h-[90vh] md:h-[80vh] overflow-hidden'>
+  <Image
+    src={aboutHero}
+    alt='About Hero Image'
+    class='w-full h-full object-bottom object-cover absolute inset-0 z-0 animate-smooth-enter-top'
+  />
+  <div class='hero-backdrop'></div>
+  <div class='bottom-fade'></div>
   <div
-    class='absolute inset-0 flex justify-center pt-24 md:pt-20 lg:pt-32 xl:pt-52 px-4 overflow-hidden'
+    class='relative flex flex-col items-center z-10 animate-smooth-enter-bottom w-full px-4'
   >
-    <Image
-      src={aboutHero}
-      alt='About Hero Image'
-      class='w-screen h-screen object-bottom object-cover absolute inset-0 z-0 animate-smooth-enter-top'
-    />
-    <div class='hero-backdrop'></div>
-    <div class='bottom-fade'></div>
-    <div
-      class='relative flex flex-col items-center z-10 animate-smooth-enter-bottom w-full px-4'
-    >
-      <h1 class='text-4xl md:text-7xl text-center'>Our philosophy & values</h1>
-    </div>
+    <h1 class='mt-12 text-4xl lg:text-7xl text-center'>
+      Our philosophy & values
+    </h1>
   </div>
 </div>
 
