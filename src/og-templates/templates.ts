@@ -13,9 +13,7 @@ export const templates: Record<string, (data?: Record<string, any>) => any> = {
       />
       <div style="gap: -32px;" tw="flex flex-col items-center">
         <h1
-          style="font-family: 'CalSans'; color: transparent; background: linear-gradient(180deg, #ffffff 34%, #A8D0FF03 90%); background-clip: text; -webkit-text-fill-color: transparent;
-
-"
+          style="font-family: 'CalSans'; color: transparent; background: linear-gradient(180deg, #ffffff 34%, #A8D0FF03 90%); background-clip: text; -webkit-text-fill-color: transparent;"
           tw="text-[96px]"
         >
           creatures.dev${data?.page}
