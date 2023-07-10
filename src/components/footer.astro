@@ -11,59 +11,62 @@ import footer from '@/assets/footer-graphic.jpeg'
 <hr
   class='container mx-auto h-px w-full border-none bg-gradient-to-r from-transparent via-link to-transparent mb-10'
 />
-<footer class='relative w-screen h-56 lg:h-[350px] overflow-hidden'>
+<footer
+  class='relative w-screen h-56 lg:h-[350px] overflow-hidden flex flex-col items-center mx-auto gap-4'
+>
   <Image
     src={footer}
     alt='Footer graphic'
-    class='absolute inset-0 h-56 lg:h-[470px] w-screen object-cover object-bottom z-0'
+    class='absolute inset-0 h-56 lg:h-[470px] w-screen object-cover object-bottom'
   />
-  <div class='footer-fade'></div>
-  <div class='flex flex-col items-center mx-auto gap-4 relative z-10'>
-    <Fragment set:html={symbol} />
-    <p>
-      © {new Date().getFullYear()} - Creatures.dev, <a
-        href='https://twitter.com/nikolovlazar'
-        rel='external nofollow'
-        class='text-link hover:underline'>Lazar Nikolov</a
-      >
-    </p>
-    <nav aria-labelledby='footer-links' class='flex items-center gap-8'>
-      <a class='hover:underline' href='/about' aria-label='About link'>About</a>
-      <a
-        class='hover:underline'
-        href={GITHUB_URL}
-        aria-label='GitHub link'
-        rel='external nofollow'>GitHub</a
-      >
-    </nav>
-    <nav aria-labelledby='footer-social-links' class='flex items-center gap-8'>
-      <a
-        class='hover:underline'
-        href={DISCORD_URL}
-        rel='external nofollow'
-        aria-label='Discord link'
-      >
-        <Fragment set:html={discord} />
-      </a>
-      <a
-        class='hover:underline'
-        href={GITHUB_URL}
-        rel='external nofollow'
-        aria-label='GitHub link'><Fragment set:html={github} /></a
-      >
-      <a
-        class='hover:underline'
-        href={TWITCH_URL}
-        rel='external nofollow'
-        aria-label='Twitch link'><Fragment set:html={twitch} /></a
-      >
-    </nav>
-  </div>
+  <span class='footer-fade'></span>
+  <span class='relative'><Fragment set:html={symbol} class='relative' /></span>
+  <p class='relative'>
+    © {new Date().getFullYear()} - Creatures.dev, <a
+      href='https://twitter.com/nikolovlazar'
+      rel='external nofollow'
+      class='text-link hover:underline'>Lazar Nikolov</a
+    >
+  </p>
+  <nav aria-labelledby='footer-links' class='flex items-center gap-8 relative'>
+    <a class='hover:underline' href='/about' aria-label='About link'>About</a>
+    <a
+      class='hover:underline'
+      href={GITHUB_URL}
+      aria-label='GitHub link'
+      rel='external nofollow'>GitHub</a
+    >
+  </nav>
+  <nav
+    aria-labelledby='footer-social-links'
+    class='flex items-center gap-8 relative'
+  >
+    <a
+      class='hover:underline'
+      href={DISCORD_URL}
+      rel='external nofollow'
+      aria-label='Discord link'
+    >
+      <Fragment set:html={discord} />
+    </a>
+    <a
+      class='hover:underline'
+      href={GITHUB_URL}
+      rel='external nofollow'
+      aria-label='GitHub link'><Fragment set:html={github} /></a
+    >
+    <a
+      class='hover:underline'
+      href={TWITCH_URL}
+      rel='external nofollow'
+      aria-label='Twitch link'><Fragment set:html={twitch} /></a
+    >
+  </nav>
 </footer>
 
 <style>
   .footer-fade {
-    @apply absolute inset-0 z-10;
+    @apply absolute inset-0;
     background: linear-gradient(
       180deg,
       rgba(2, 2, 9, 0.98) 8%,
