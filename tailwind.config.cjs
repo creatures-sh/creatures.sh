@@ -9,7 +9,9 @@ module.exports = {
       colors: {
         'rich-black': '#020209',
         secondary: 'rgba(255, 255, 255, 0.7)',
+        tertiary: 'rgba(255, 255, 255, 0.35)',
         panel: '#0f0f15',
+        'panel-hover': '#1a1a25',
         discord: '#5A65EA',
         'discord-hover': '#6a74ec',
         twitch: '#874BF6',
@@ -66,5 +68,5 @@ module.exports = {
       ],
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 }

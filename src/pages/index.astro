@@ -1,20 +1,23 @@
 ---
+import { getCollection } from 'astro:content'
 import Layout from '@/components/layout.astro'
 import Hero from '@/components/hero.astro'
 import DiscordBannerCTA from '@/components/discord-banner-cta.astro'
+import ContributeBanner from '@/components/contribute-banner.astro'
 import Panel from '@/components/panel.astro'
 import github from '@/components/icons/github.svg?raw'
 import twitch from '@/components/icons/twitch.svg?raw'
 import { GITHUB_URL, TWITCH_URL, LAST_STREAM_VOD } from '@/config'
+import PostCard from '@/components/post-card.astro'
+
+const latestPosts = (await getCollection('blog')).slice(0, 3)
 ---
 
 <Layout>
   <Hero />
-  <section
-    class='lg:gap-40 p-4 pb-24 lg:pb-40 relative z-10 animate-smooth-enter-bottom'
-  >
-    <div
-      class='grid max-xl:grid-cols-2 xl:grid-cols-[300px_1fr_300px] items-center gap-6 mb-12'
+  <div class='p-4 pb-24 lg:pb-40 relative z-10 animate-smooth-enter-bottom'>
+    <section
+      class='grid max-xl:grid-cols-2 xl:grid-cols-[300px_1fr_300px] items-center gap-6 mb-20 md:mb-40'
     >
       <Panel class='max-sm:col-span-2 flex flex-col p-8 gap-4 items-start'>
         <h3 class='text-2xl'>Go to the project</h3>
@@ -52,7 +55,14 @@ import { GITHUB_URL, TWITCH_URL, LAST_STREAM_VOD } from '@/config'
           Follow on Twitch
         </a>
       </Panel>
-    </div>
+    </section>
+    <ContributeBanner class='mb-20 md:mb-40' />
+    <section class='mb-20 md:mb-40'>
+      <h3 class='font-heading text-5xl mb-8'>Latest posts 🐙</h3>
+      <ul>
+        {latestPosts.map((post) => <PostCard post={post} />)}
+      </ul>
+    </section>
     <DiscordBannerCTA />
-  </section>
+  </div>
 </Layout>

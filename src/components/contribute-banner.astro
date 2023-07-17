@@ -1,12 +1,22 @@
 ---
+import { twMerge } from 'tailwind-merge'
 import { Image } from 'astro:assets'
 import { DISCORD_URL } from '@/config'
 import Panel from '@/components/panel.astro'
 import creature from '@/assets/contribute-banner-creature.jpg'
+
+type Props = {
+  class?: string
+}
+
+const { class: className = '' } = Astro.props
 ---
 
 <Panel
-  class='flex max-sm:flex-col items-center gap-6 sm:gap-8 sm:pr-6 max-sm:pb-8'
+  class={twMerge(
+    className,
+    'flex max-sm:flex-col items-center gap-6 sm:gap-8 sm:pr-6 max-sm:pb-8',
+  )}
   size='md'
 >
   <div class='relative max-sm:w-full sm:h-24 aspect-video overflow-hidden'>
