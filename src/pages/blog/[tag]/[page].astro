@@ -1,0 +1,67 @@
+---
+import { twJoin } from 'tailwind-merge'
+import { getCollection } from 'astro:content'
+import type { GetStaticPaths } from 'astro'
+
+import Search from '@/components/search.tsx'
+import ContributeBanner from '@/components/contribute-banner.astro'
+import Layout from '@/components/layout.astro'
+import PostCard from '@/components/post-card.astro'
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const posts = await getCollection('blog')
+  const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
+  tags.push('all')
+
+  return tags.map((tag) => {
+    const filteredPosts =
+      tag === 'all'
+        ? posts
+        : posts.filter((post) => post.data.tags.includes(tag))
+
+    return paginate(filteredPosts, {
+      params: { tag },
+      pageSize: 6,
+    })
+  })
+}
+
+const { page } = Astro.props
+const params = Astro.params
+
+const featuredPosts = await getCollection('blog')
+const tags = Array.from(
+  new Set(featuredPosts.flatMap((post) => post.data.tags)),
+)
+tags.unshift('all')
+---
+
+<Layout title='Blog' class='flex flex-col gap-32 pb-32'>
+  <div class='flex flex-col gap-12 mt-24'>
+    <h1 class='font-heading text-5xl'>Featured post</h1>
+    <PostCard post={featuredPosts[0]} />
+  </div>
+  <ContributeBanner />
+  <section>
+    <div class='flex justify-between w-full'>
+      <ul class='flex gap-6'>
+        {
+          tags.map((tag: string) => (
+            <li>
+              <a
+                href={`/blog/${tag}/1`}
+                class={twJoin(
+                  params.tag === tag && 'text-link',
+                  'hover:underline capitalize',
+                )}
+              >
+                {tag}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <Search client:load />
+    </div>
+  </section>
+</Layout>

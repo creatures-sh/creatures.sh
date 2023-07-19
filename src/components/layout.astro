@@ -1,4 +1,5 @@
 ---
+import { twMerge } from 'tailwind-merge'
 import { SEO } from 'astro-seo'
 import 'cal-sans'
 import '@/styles/global.css'
@@ -9,6 +10,7 @@ type Props = {
   title?: string
   description?: string
   canonical?: string
+  class?: string
   ogImage?: {
     template: string
     data?: Record<string, any>
@@ -32,6 +34,8 @@ const ogImageUrl = `${Astro.url.origin}/og/${
 
 const canonicalURL =
   canonical ?? new URL(Astro.url.pathname, Astro.site).toString()
+
+const { class: className = '' } = Astro.props
 ---
 
 <html lang='en' class='dark'>
@@ -71,7 +75,7 @@ const canonicalURL =
   </head>
   <body class='min-h-screen overflow-x-hidden bg-rich-black text-white'>
     <Header />
-    <main class='container mx-auto'>
+    <main class={twMerge('container mx-auto px-4', className)}>
       <slot />
     </main>
     <Footer />

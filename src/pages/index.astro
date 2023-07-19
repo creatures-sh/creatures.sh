@@ -59,7 +59,7 @@ const latestPosts = (await getCollection('blog')).slice(0, 3)
     <ContributeBanner class='mb-20 md:mb-40' />
     <section class='mb-20 md:mb-40'>
       <h3 class='font-heading text-5xl mb-8'>Latest posts 🐙</h3>
-      <ul>
+      <ul class='grid grid-cols-3 gap-6'>
         {latestPosts.map((post) => <PostCard post={post} />)}
       </ul>
     </section>

@@ -14,36 +14,38 @@ const author = await getEntry(
 ---
 
 <article
-  class='bg-panel border-2 border-border overflow-hidden hover:bg-panel-hover transition-colors p-3 rounded-xl max-w-md relative'
+  class='bg-panel border-2 border-border overflow-hidden hover:bg-panel-hover transition-colors p-3 rounded-xl relative @container gap-3'
 >
-  <img
-    class='aspect-video rounded-xl mb-3'
-    alt={`The ${post.data.title} article featured image`}
-    src={post.data.image.src}
-  />
-  <div class='w-full p-4'>
-    <div class='flex items-center gap-1.5 mb-3'>
-      <img
-        class='rounded-full'
-        width='18'
-        height='18'
-        alt={`A photo of ${author.data.name}`}
-        src={author.data.avatar.src}
-      />
-      <p class='text-sm text-tertiary'>{author.data.username}</p>
-      <hr class='flex-1 border-border' />
-      <p class='text-sm text-tertiary'>
-        {format(post.data.publishDate, 'MMM d')}
+  <div class='@3xl:flex @3xl:items-center'>
+    <img
+      class='aspect-video w-full rounded-xl mb-3 @3xl:mb-0 @3xl:order-2'
+      alt={`The ${post.data.title} article featured image`}
+      src={post.data.image.src}
+    />
+    <div class='w-full p-4 flex flex-col gap-3 @3xl:gap-6 @3xl:pr-20'>
+      <div class='flex items-center gap-1.5'>
+        <img
+          class='rounded-full'
+          width='18'
+          height='18'
+          alt={`A photo of ${author.data.name}`}
+          src={author.data.avatar.src}
+        />
+        <p class='text-sm text-tertiary'>{author.data.username}</p>
+        <hr class='flex-1 border-border' />
+        <p class='text-sm text-tertiary'>
+          {format(post.data.publishDate, 'MMM d')}
+        </p>
+      </div>
+      <h4 class='font-heading text-2xl'>{post.data.title}</h4>
+      <p class='text-sm text-secondary line-clamp-3'>
+        {post.body.trim().slice(0, 320)}
       </p>
+      <a
+        href={`/blog/${post.slug}`}
+        class='text-link fwwont-medium hover:underline hover:underline-offset-2 after:content-[" "] after:absolute after:inset-0'
+        >Read on -&gt;</a
+      >
     </div>
-    <h4 class='font-heading text-2xl mb-3'>{post.data.title}</h4>
-    <p class='text-sm text-secondary line-clamp-3 mb-3'>
-      {post.body.trim().slice(0, 180)}
-    </p>
-    <a
-      href={`/blog/${post.slug}`}
-      class='text-link fwwont-medium hover:underline hover:underline-offset-2 after:content-[" "] after:absolute after:inset-0'
-      >Read on -&gt;</a
-    >
   </div>
 </article>
