@@ -1,4 +1,4 @@
-import { createSignal, Match, Show, Switch } from 'solid-js'
+import { createSignal, Show } from 'solid-js'
 
 import search from '@/components/icons/search.svg'
 import close from '@/components/icons/close.svg'
