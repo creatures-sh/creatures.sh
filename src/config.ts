@@ -3,4 +3,4 @@ export const DISCORD_URL = 'https://discord.creatures.dev'
 export const TWITCH_URL = 'https://twitch.tv/nikolovlazar'
 export const DISCORD_MEMBERS = 70
 export const LAST_STREAM_VOD =
-  'https://www.youtube-nocookie.com/embed/wsvghzNQyFo'
+  'https://www.youtube-nocookie.com/embed/RuEIhO1jtv8'
