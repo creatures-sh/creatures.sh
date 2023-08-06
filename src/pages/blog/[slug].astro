@@ -29,7 +29,7 @@ const { Content, remarkPluginFrontmatter, headings } = await post.render()
 
 <Layout title={post.data.title} class='pb-20 lg:pb-40'>
   <section
-    class='absolute inset-x-0 top-0 w-full h-[70vh] overflow-hidden after:bg-noise-texture after:absolute after:inset-0 after:bg-auto after:bg-repeat after:opacity-[0.8] after:mix-blend-overlay'
+    class='absolute inset-x-0 top-[96px] lg:top-0 w-full h-[40vh] lg:h-[70vh] overflow-hidden after:bg-noise-texture after:absolute after:inset-0 after:bg-auto after:bg-repeat after:opacity-[0.8] after:mix-blend-overlay'
   >
     <Image
       src={post.data.image}
@@ -38,7 +38,7 @@ const { Content, remarkPluginFrontmatter, headings } = await post.render()
     />
     <div class='hero-backdrop'></div>
   </section>
-  <div class='h-[70vh] -mt-20'></div>
+  <div class='h-[40vh] lg:h-[70vh] lg:-mt-20'></div>
   <div class='flex items-center gap-3'>
     <img
       class='rounded-full'
@@ -57,10 +57,10 @@ const { Content, remarkPluginFrontmatter, headings } = await post.render()
   </div>
 
   <div
-    class='grid lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative mt-12'
+    class='grid lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12'
   >
     <div
-      class='flex flex-col gap-3 px-2 py-12 h-fit lg:sticky top-8 lg:col-start-3'
+      class='flex flex-col gap-3 px-2 py-4 lg:py-12 h-fit lg:sticky top-8 lg:col-start-3'
     >
       <span class='text-sm font-bold text-secondary py-3'>ON THIS PAGE</span>
       <ul>
