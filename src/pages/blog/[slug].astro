@@ -70,7 +70,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
     />
     <div class='hero-backdrop'></div>
   </section>
-  <div class='h-[40vh] lg:h-[70vh] lg:-mt-20'></div>
+  <div class='h-[42vh] lg:h-[70vh] lg:-mt-20'></div>
   <div class='flex items-center gap-3'>
     <img
       class='rounded-full'
@@ -89,7 +89,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
   </div>
 
   <div
-    class='grid lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12 overflow-hidden'
+    class='grid grid-cols-1 lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12 overflow-hidden'
   >
     <div
       class='flex flex-col gap-3 lg:px-2 py-4 lg:py-12 h-fit lg:sticky top-8 lg:col-start-3'
@@ -110,9 +110,11 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
               <li class='flex w-full'>
                 <a
                   class={twJoin(
-                    'py-2 px-0 lg:px-3 w-full hover:bg-panel-hover rounded-md',
-                    depth === 3 && 'pl-4 lg:pl-10',
-                    depth === 4 && 'pl-8 lg:pl-16',
+                    'py-2 px-0 lg:px-2 w-full hover:bg-panel-hover rounded-md',
+                    depth === 3 && 'pl-2 lg:pl-4',
+                    depth === 4 && 'pl-4 lg:pl-6',
+                    depth === 5 && 'pl-6 lg:pl-8',
+                    depth === 6 && 'pl-8 lg:pl-10',
                   )}
                   href={`#${slug}`}
                 >
