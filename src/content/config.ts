@@ -9,6 +9,7 @@ export const authors = defineCollection({
       }),
       name: z.string(),
       username: z.string(),
+      twitter: z.string().optional(),
     }),
 })
 
@@ -18,6 +19,7 @@ const blog = defineCollection({
     z.object({
       title: z.string(),
       publishDate: z.date(),
+      updateDate: z.date(),
       image: image().refine((img) => img.width >= 440, {
         message: 'Featured image must be at least 440px wide!',
       }),

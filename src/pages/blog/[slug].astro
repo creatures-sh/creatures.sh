@@ -1,6 +1,7 @@
 ---
 import { twJoin } from 'tailwind-merge'
 import { format } from 'date-fns'
+import path from 'path'
 import { Image } from 'astro:assets'
 import { getEntry, getCollection } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
@@ -25,9 +26,40 @@ const { post } = Astro.props
 const author = await getEntry('authors', post.data.author.slug)
 
 const { Content, remarkPluginFrontmatter, headings } = await post.render()
+
+let featuredImage = path.parse(post.data.image.src).base
+featuredImage = featuredImage.substring(0, featuredImage.indexOf('?'))
+featuredImage = featuredImage.replace('.jpg', '')
+
+const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
+  url: Astro.url.origin,
+  image: featuredImage,
+}).toString()}`
 ---
 
-<Layout title={post.data.title} class='pb-20 lg:pb-40'>
+<Layout
+  seo={{
+    title: `${post.data.title} | creatures.dev`,
+    openGraph: {
+      basic: {
+        title: `${post.data.title} | creatures.dev`,
+        image: ogImageUrl,
+        type: 'article',
+      },
+      article: {
+        publishedTime: post.data.publishDate,
+        modifiedTime: post.data.updatedDate,
+        authors: [
+          `https://twitter.com/${author?.data.twitter || '@NikolovLazar'}`,
+        ],
+        tags: post.data.tags,
+        section: post.data.tags[0],
+      },
+    },
+    twitter: { creator: author?.data.twitter },
+  }}
+  class='pb-20 lg:pb-40'
+>
   <section
     class='absolute inset-x-0 top-[96px] lg:top-0 w-full h-[40vh] lg:h-[70vh] overflow-hidden after:bg-noise-texture after:absolute after:inset-0 after:bg-auto after:bg-repeat after:opacity-[0.8] after:mix-blend-overlay'
   >
@@ -145,11 +177,10 @@ const { Content, remarkPluginFrontmatter, headings } = await post.render()
   .hero-backdrop {
     @apply absolute inset-0 z-10;
     background: radial-gradient(
-        54.85% 54.85% at 50% 45.15%,
-        rgba(2, 2, 9, 0) 0%,
-        rgba(2, 2, 9, 0.67) 44.84%,
-        #020209 100%
-      ),
-      url(<path-to-image>), rgba(0, 0, 0, 0) 50% / cover no-repeat;
+      54.85% 54.85% at 50% 45.15%,
+      rgba(2, 2, 9, 0) 0%,
+      rgba(2, 2, 9, 0.67) 44.84%,
+      #020209 100%
+    );
   }
 </style>
