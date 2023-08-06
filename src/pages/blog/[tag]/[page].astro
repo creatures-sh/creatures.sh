@@ -3,7 +3,7 @@ import { twJoin } from 'tailwind-merge'
 import { getCollection, type CollectionEntry } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
 
-import Search from '@/components/search.tsx'
+// import Search from '@/components/search.tsx'
 import ContributeBanner from '@/components/contribute-banner.astro'
 import Layout from '@/components/layout.astro'
 import PostCard from '@/components/post-card.astro'
@@ -65,32 +65,33 @@ const posts: CollectionEntry<'blog'>[] = page.data
           ))
         }
       </ul>
-      <Search client:visible />
+      <!-- <Search client:visible /> -->
     </div>
     <ul class='grid lg:grid-cols-3 gap-6 mb-20 lg:mb-40'>
       {posts.map((post) => <PostCard post={post} />)}
     </ul>
-    <div class='flex justify-center gap-12'>
-      {
-        page.currentPage > 1 && (
-          <a
-            href={`/blog/${params.tag}/${page.currentPage - 1}`}
-            class='bg-panel hover:bg-panel-hover rounded-full px-12 py-3'
-          >
-            &lt;
-          </a>
-        )
-      }
-      {
-        page.currentPage !== page.lastPage && (
-          <a
-            href={`/blog/${params.tag}/${page.currentPage + 1}`}
-            class='bg-panel hover:bg-panel-hover rounded-full px-12 py-3'
-          >
-            &gt;
-          </a>
-        )
-      }
+    <div class='flex justify-center items-center gap-6 lg:gap-12'>
+      <a
+        href={page.currentPage > 1 &&
+          `/blog/${params.tag}/${page.currentPage - 1}`}
+        class={twJoin(
+          'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
+          page.currentPage === 1 && 'cursor-not-allowed opacity-50',
+        )}
+      >
+        &lt;
+      </a>
+      <p class='font-heading text-xl'>{page.currentPage}</p>
+      <a
+        href={page.currentPage !== page.lastPage &&
+          `/blog/${params.tag}/${page.currentPage + 1}`}
+        class={twJoin(
+          'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
+          page.currentPage === page.lastPage && 'cursor-not-allowed opacity-50',
+        )}
+      >
+        &gt;
+      </a>
     </div>
   </section>
 </Layout>
