@@ -155,8 +155,14 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  [id^='user-content-fn'] {
     @apply scroll-mt-24;
+  }
+
+  a[id^='user-content-fnref'],
+  a[class^='data-footnote-backref'] {
+    @apply text-link;
   }
 
   .prose a:hover {
