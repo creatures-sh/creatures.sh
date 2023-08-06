@@ -89,10 +89,10 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
   </div>
 
   <div
-    class='grid lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12'
+    class='grid lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12 overflow-hidden'
   >
     <div
-      class='flex flex-col gap-3 px-2 py-4 lg:py-12 h-fit lg:sticky top-8 lg:col-start-3'
+      class='flex flex-col gap-3 lg:px-2 py-4 lg:py-12 h-fit lg:sticky top-8 lg:col-start-3'
     >
       <span class='text-sm font-bold text-secondary py-3'>ON THIS PAGE</span>
       <ul>
@@ -110,8 +110,9 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
               <li class='flex w-full'>
                 <a
                   class={twJoin(
-                    'py-2 px-3 w-full hover:bg-panel-hover rounded-md',
-                    depth === 3 && 'pl-10',
+                    'py-2 px-0 lg:px-3 w-full hover:bg-panel-hover rounded-md',
+                    depth === 3 && 'pl-4 lg:pl-10',
+                    depth === 4 && 'pl-8 lg:pl-16',
                   )}
                   href={`#${slug}`}
                 >
@@ -124,7 +125,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
       </ul>
     </div>
     <div
-      class='lg:col-start-2 row-start-2 lg:row-start-1 prose lg:prose-xl dark:prose-invert prose-headings:no-underline prose-a:no-underline'
+      class='lg:col-start-2 row-start-2 lg:row-start-1 prose prose-slate lg:prose-xl dark:prose-invert prose-headings:no-underline prose-a:no-underline'
     >
       <h1 class='mb-10'>{post.data.title}</h1>
       <Content />
@@ -158,6 +159,10 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
 
   .prose a:hover {
     text-decoration: underline;
+  }
+
+  .prose pre * {
+    @apply font-mono;
   }
 </style>
 

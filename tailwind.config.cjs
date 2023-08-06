@@ -70,6 +70,7 @@ module.exports = {
         ['Cal Sans', ...defaultTheme.fontFamily.sans],
         { fontFeatureSettings: '"ss02"' },
       ],
+      mono: defaultTheme.fontFamily.mono,
     },
   },
   plugins: [
