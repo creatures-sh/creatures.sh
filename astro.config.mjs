@@ -33,6 +33,9 @@ export default defineConfig({
         },
       ],
     ],
+    shikiConfig: {
+      theme: 'material-theme-ocean',
+    },
   },
   experimental: {
     assets: true,
