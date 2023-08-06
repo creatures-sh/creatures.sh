@@ -58,8 +58,13 @@ const latestPosts = (await getCollection('blog')).slice(0, 3)
     </section>
     <ContributeBanner class='mb-20 md:mb-40' />
     <section class='mb-20 md:mb-40'>
-      <h3 class='font-heading text-5xl mb-8'>Latest posts 🐙</h3>
-      <ul class='grid grid-cols-3 gap-6'>
+      <div
+        class='flex flex-col lg:flex-row lg:justify-between items-center w-full mb-8 gap-8'
+      >
+        <h3 class='font-heading text-5xl'>Latest posts 🐙</h3>
+        <a href='/blog/all/1' class='text-link'>See all -&gt;</a>
+      </div>
+      <ul class='grid lg:grid-cols-3 gap-6'>
         {latestPosts.map((post) => <PostCard post={post} />)}
       </ul>
     </section>

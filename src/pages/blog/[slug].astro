@@ -1,0 +1,155 @@
+---
+import { twJoin } from 'tailwind-merge'
+import { format } from 'date-fns'
+import { Image } from 'astro:assets'
+import { getEntry, getCollection } from 'astro:content'
+import type { GetStaticPaths } from 'astro'
+
+import Layout from '@/components/layout.astro'
+import ContributeBanner from '@/components/contribute-banner.astro'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('blog')
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+    props: {
+      post,
+    },
+  }))
+}
+
+const { post } = Astro.props
+const author = await getEntry('authors', post.data.author.slug)
+
+const { Content, remarkPluginFrontmatter, headings } = await post.render()
+---
+
+<Layout title={post.data.title} class='pb-20 lg:pb-40'>
+  <section
+    class='absolute inset-x-0 top-0 w-full h-[70vh] overflow-hidden after:bg-noise-texture after:absolute after:inset-0 after:bg-auto after:bg-repeat after:opacity-[0.8] after:mix-blend-overlay'
+  >
+    <Image
+      src={post.data.image}
+      alt={`Featured image of the article: ${post.data.title}`}
+      class='w-full h-full object-center object-cover absolute inset-0 z-0 animate-smooth-enter-top'
+    />
+    <div class='hero-backdrop'></div>
+  </section>
+  <div class='h-[70vh] -mt-20'></div>
+  <div class='flex items-center gap-3'>
+    <img
+      class='rounded-full'
+      width='24'
+      height='24'
+      alt={`A photo of ${author?.data.name}`}
+      src={author?.data.avatar.src}
+    />
+    <p class='text-tertiary'>{author?.data.username}</p>
+    <hr class='flex-1 border-border' />
+    <p class='text-sm text-tertiary'>
+      {format(post.data.publishDate, 'MMM d')}
+      ・
+      {Math.round(remarkPluginFrontmatter?.estReadingTime)} min read
+    </p>
+  </div>
+
+  <div
+    class='grid lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative mt-12'
+  >
+    <div
+      class='flex flex-col gap-3 px-2 py-12 h-fit lg:sticky top-8 lg:col-start-3'
+    >
+      <span class='text-sm font-bold text-secondary py-3'>ON THIS PAGE</span>
+      <ul>
+        {
+          headings.map(
+            ({
+              depth,
+              slug,
+              text,
+            }: {
+              depth: number
+              slug: string
+              text: string
+            }) => (
+              <li class='flex w-full'>
+                <a
+                  class={twJoin(
+                    'py-2 px-3 w-full hover:bg-panel-hover rounded-md',
+                    depth === 3 && 'pl-10',
+                  )}
+                  href={`#${slug}`}
+                >
+                  {text}
+                </a>
+              </li>
+            ),
+          )
+        }
+      </ul>
+    </div>
+    <div
+      class='lg:col-start-2 row-start-2 lg:row-start-1 prose lg:prose-xl dark:prose-invert prose-headings:no-underline prose-a:no-underline'
+    >
+      <h1 class='mb-10'>{post.data.title}</h1>
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+      <Content />
+    </div>
+  </div>
+  <div class='my-20 lg:my-40 flex justify-center items-center gap-4'>
+    <p class='font-heading'>Tags:</p>
+    {
+      post.data.tags.map((tag: string) => (
+        <a
+          href={`/blog/${tag}/1`}
+          class='px-4 py-3 bg-panel hover:bg-panel-hover rounded-full font-heading'
+        >
+          #{tag}
+        </a>
+      ))
+    }
+  </div>
+  <ContributeBanner />
+</Layout>
+
+<style is:global>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply scroll-mt-24;
+  }
+
+  .prose a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<style>
+  .hero-backdrop {
+    @apply absolute inset-0 z-10;
+    background: radial-gradient(
+        54.85% 54.85% at 50% 45.15%,
+        rgba(2, 2, 9, 0) 0%,
+        rgba(2, 2, 9, 0.67) 44.84%,
+        #020209 100%
+      ),
+      url(<path-to-image>), rgba(0, 0, 0, 0) 50% / cover no-repeat;
+  }
+</style>

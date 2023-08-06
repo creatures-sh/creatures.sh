@@ -1,6 +1,6 @@
 ---
 import { twJoin } from 'tailwind-merge'
-import { getCollection } from 'astro:content'
+import { getCollection, type CollectionEntry } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
 
 import Search from '@/components/search.tsx'
@@ -34,16 +34,20 @@ const tags = Array.from(
   new Set(featuredPosts.flatMap((post) => post.data.tags)),
 )
 tags.unshift('all')
+
+const posts: CollectionEntry<'blog'>[] = page.data
 ---
 
-<Layout title='Blog' class='flex flex-col gap-32 pb-32'>
+<Layout title='Blog' class='flex flex-col gap-32 pb-20 lg:pb-32'>
   <div class='flex flex-col gap-12 mt-24'>
     <h1 class='font-heading text-5xl'>Featured post</h1>
     <PostCard post={featuredPosts[0]} />
   </div>
   <ContributeBanner />
   <section>
-    <div class='flex justify-between w-full'>
+    <div
+      class='flex flex-col lg:flex-row justify-between items-center gap-8 w-full mb-12'
+    >
       <ul class='flex gap-6'>
         {
           tags.map((tag: string) => (
@@ -61,7 +65,32 @@ tags.unshift('all')
           ))
         }
       </ul>
-      <Search client:load />
+      <Search client:visible />
+    </div>
+    <ul class='grid lg:grid-cols-3 gap-6 mb-20 lg:mb-40'>
+      {posts.map((post) => <PostCard post={post} />)}
+    </ul>
+    <div class='flex justify-center gap-12'>
+      {
+        page.currentPage > 1 && (
+          <a
+            href={`/blog/${params.tag}/${page.currentPage - 1}`}
+            class='bg-panel hover:bg-panel-hover rounded-full px-12 py-3'
+          >
+            &lt;
+          </a>
+        )
+      }
+      {
+        page.currentPage !== page.lastPage && (
+          <a
+            href={`/blog/${params.tag}/${page.currentPage + 1}`}
+            class='bg-panel hover:bg-panel-hover rounded-full px-12 py-3'
+          >
+            &gt;
+          </a>
+        )
+      }
     </div>
   </section>
 </Layout>

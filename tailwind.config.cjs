@@ -3,6 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  safelist: ['font-heading', 'scroll-mt-20'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -29,6 +30,9 @@ module.exports = {
         'smooth-enter-top': 'slide-in-top 1.6s ease-out, fade-in 1.6s ease-out',
         'smooth-enter-bottom':
           'slide-in-bottom 1.6s ease-out, fade-in 1.6s ease-out',
+      },
+      backgroundImage: {
+        'noise-texture': "url('/noise-texture.png')",
       },
       keyframes: {
         'slide-in-top': {
@@ -71,5 +75,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/container-queries'),
+    require('@tailwindcss/typography'),
   ],
 }

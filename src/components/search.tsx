@@ -17,7 +17,7 @@ export default function Search() {
 
   return (
     <form
-      class='flex flex-1 justify-end h-6 gap-4'
+      class='flex flex-1 justify-end min-h-[42px] gap-4'
       onSubmit={searchPosts}
       role='search'
     >
@@ -26,7 +26,7 @@ export default function Search() {
           ref={(el) => (inputRef = el)}
           type='search'
           placeholder='Search'
-          class='bg-rich-black border-border border-b-2 w-full max-w-xs px-2'
+          class='bg-rich-black border-border border-b-2 w-full max-w-sm px-4 py-2'
           onChange={(e) => setQuery(e.currentTarget.value)}
         />
       </Show>
