@@ -8,3 +8,8 @@ and it's deployed on [Netlify](https://www.netlify.com/).
 
 Simple. Clone it, `pnpm install` and then `pnpm dev`. There are no secrets or
 environment variables to set up.
+
+## Contributing
+
+All contributions are welcome 💖. If you want to learn how to contribute, check
+out our [contribution guide](./CONTRIBUTING.md).
