@@ -73,8 +73,8 @@ idea, you can start writing the article and open a PR of your first draft.
    - `username`: a string (this is your Discord username)
    - `twitter`: a string (this is your Twitter handle with the @)
    - `name`: a string (this is your name)
-   - `avatar`: '../../assets/authors/[your-username].jpg' (make sure to add the
-     image to the assets folder)
+   - `avatar`: `'../../assets/authors/[your-username].jpg'` (make sure to add
+     the image to the assets folder)
 
    > Feel free to check the other author files for reference.
 
@@ -86,8 +86,8 @@ idea, you can start writing the article and open a PR of your first draft.
    - `title`: a string
    - `updateDate`: YYYY-MM-DD format string
    - `publishDate`: YYYY-MM-DD format string
-   - `image`: '../../assets/blog/featured-[X].jpg' where X is the number of the
-     image
+   - `image`: `'../../assets/blog/featured-[X].jpg'` where X is the number of
+     the image
    - `tags`: [] of strings
    - `author`: the slug of the author file you created in step 2
    - `excerpt`: a string
