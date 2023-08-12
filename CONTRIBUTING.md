@@ -67,7 +67,7 @@ idea, you can start writing the article and open a PR of your first draft.
    `blog/[your-article-slug]`.
 
 2. If you're writing for the first time, create a new file
-   `src/content/authors/<your-name>.mdx` and add the following frontmatter
+   `src/content/authors/<your-name>.md` and add the following frontmatter
    properties to the file:
 
    - `username`: a string (this is your Discord username)
@@ -78,8 +78,8 @@ idea, you can start writing the article and open a PR of your first draft.
 
    > Feel free to check the other author files for reference.
 
-3. Create a new `mdx` file in `src/content/blog` with the name of your article
-   slugified (e.g. `src/content/blog/css-nesting.mdx`)
+3. Create a new `md` file in `src/content/blog` with the name of your article
+   slugified (e.g. `src/content/blog/css-nesting.md`)
 
 4. Add the following frontmatter to the file:
 
