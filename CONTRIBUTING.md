@@ -24,6 +24,7 @@ forward to your contributions. 🎉
   - [Blog posts](#blog-posts)
     - [Writing instructions](#writing-instructions)
     - [PR instructions](#pr-instructions)
+- [License](#license)
 
 ## Setting up the project
 
