@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import { GITHUB_URL, DISCORD_URL, TWITCH_URL } from '@/config'
+import { GITHUB_URL, DISCORD_URL, TWITCH_URL, RSS_URL } from '@/config'
 import symbol from './icons/symbol.svg?raw'
 import discord from './icons/discord.svg?raw'
 import github from './icons/github.svg?raw'
@@ -30,6 +30,7 @@ import footer from '@/assets/footer-graphic.jpeg'
   </p>
   <nav aria-labelledby='footer-links' class='flex items-center gap-8 relative'>
     <a class='hover:underline' href='/about' aria-label='About link'>About</a>
+    <a class='hover:underline' href={RSS_URL} aria-label='RSS link'>RSS</a>
     <a
       class='hover:underline'
       href={GITHUB_URL}
