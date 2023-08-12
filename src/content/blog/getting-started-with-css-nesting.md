@@ -246,12 +246,12 @@ checking whether the selector contains one of the symbols below:
 You might recognize some of these symbols. Some of them are used for selectors,
 pseudo-classes and pseudo-elements, combinators, attribute selectors etc...
 
-If the parser finds a nested selector that does't start with any of these
+If the parser finds a nested selector that doesn't start with any of these
 symbols, it will fail to parse it, which will result in incorrect styles.
 
 ## Conclusion
 
 Nesting is a great feature that can help us write more maintainable CSS. It can
-also help us write less code, since we don't need to repeat the parent selector
-over and over again. This is huge for CSS, and I'm really excited to see all of
-the creative ways developers are going to come up with to use it.
+also help us write less code since we don't need to repeat the parent selector
+over and over again. This is huge for CSS, and I'm excited to see all of the
+creative ways developers are going to come up with to use it.
