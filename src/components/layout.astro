@@ -68,6 +68,7 @@ const description =
         card: seo.twitter?.card ?? 'summary_large_image',
         image: ogImageUrl,
         description,
+        ...seo.twitter,
       }}
       openGraph={{
         basic: {
