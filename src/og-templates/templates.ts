@@ -92,7 +92,7 @@ export const templates: Record<string, (data?: Record<string, any>) => any> = {
         </h2>
         <p
           style="font-family: 'CalSans'"
-          tw="absolute bottom-12 inset-x-auto text-2xl opacity-80"
+          tw="absolute bottom-12 inset-x-auto text-3xl opacity-80"
         >
           By ${data?.author}
         </p>
