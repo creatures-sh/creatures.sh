@@ -86,7 +86,7 @@ idea, you can start writing the article and open a PR of your first draft.
    - `title`: a string
    - `updateDate`: YYYY-MM-DD format string
    - `publishDate`: YYYY-MM-DD format string
-   - `image`: `'../../assets/blog/featured-[X].jpg'` where X is the number of
+   - `image`: `'featured-[X].jpg'` where X is the number of
      the image
    - `tags`: [] of strings
    - `author`: the slug of the author file you created in step 2
