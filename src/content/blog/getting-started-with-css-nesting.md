@@ -11,16 +11,15 @@ excerpt:
   how we can get started using it."
 ---
 
-import { YouTube } from '@astro-community/astro-embed-youtube'
-
-<figure>
-  <YouTube id='dr6UAQUAiu4' />
-  <figcaption>
-    <a href='https://www.youtube.com/watch?v=dr6UAQUAiu4'>
-      Watch on YouTube ↗
-    </a>
-  </figcaption>
-</figure>
+<iframe
+  width='560'
+  height='315'
+  src='https://www.youtube-nocookie.com/embed/dr6UAQUAiu4'
+  title='Getting started with CSS Nesting'
+  frameborder='0'
+  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+  allowfullscreen
+></iframe>
 
 CSS Nesting used to only be possible in CSS preprocessors like Sass and Less.
 But guess what, it's now built in native CSS and all modern browsers will
