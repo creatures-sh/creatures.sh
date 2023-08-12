@@ -2,12 +2,16 @@
 import { type CollectionEntry, getEntry } from 'astro:content'
 import { Image } from 'astro:assets'
 import { format } from 'date-fns'
+import { featuredImages } from '@/utils/featured-images'
 
 type Props = {
   post: CollectionEntry<'blog'>
 }
 
 const { post } = Astro.props
+
+const featuredImage = featuredImages[post.data.image];
+
 const author = await getEntry(
   post.data.author.collection,
   post.data.author.slug,
@@ -24,7 +28,7 @@ const author = await getEntry(
       <Image
         class='absolute w-full h-full'
         alt={`The ${post.data.title} article featured image`}
-        src={post.data.image}
+        src={featuredImage}
       />
       <span class='absolute text-white font-heading text-sm top-6 left-6'
         >creatures.dev</span

@@ -2,7 +2,7 @@
 title: Getting started with CSS Nesting
 updateDate: 2023-08-12
 publishDate: 2023-08-12
-image: '../../assets/blog/featured-1.jpg'
+image: 'featured-1.jpg'
 tags: [CSS]
 author: lazar-nikolov
 excerpt:
