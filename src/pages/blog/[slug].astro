@@ -27,14 +27,7 @@ const author = await getEntry('authors', post.data.author.slug)
 
 const { Content, remarkPluginFrontmatter, headings } = await post.render()
 
-let featuredImage = path.parse(post.data.image.src).base
-featuredImage = featuredImage.substring(0, featuredImage.indexOf('?'))
-featuredImage = featuredImage.replace('.jpg', '')
-
-const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
-  url: Astro.url.origin,
-  image: featuredImage,
-}).toString()}`
+const ogImageUrl = `${Astro.url.origin}/og/default.png`
 ---
 
 <Layout
