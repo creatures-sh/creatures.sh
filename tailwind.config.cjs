@@ -3,13 +3,16 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  safelist: ['font-heading', 'scroll-mt-20'],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
         'rich-black': '#020209',
         secondary: 'rgba(255, 255, 255, 0.7)',
+        tertiary: 'rgba(255, 255, 255, 0.35)',
         panel: '#0f0f15',
+        'panel-hover': '#1a1a25',
         discord: '#5A65EA',
         'discord-hover': '#6a74ec',
         twitch: '#874BF6',
@@ -27,6 +30,9 @@ module.exports = {
         'smooth-enter-top': 'slide-in-top 1.6s ease-out, fade-in 1.6s ease-out',
         'smooth-enter-bottom':
           'slide-in-bottom 1.6s ease-out, fade-in 1.6s ease-out',
+      },
+      backgroundImage: {
+        'noise-texture': "url('/noise-texture.png')",
       },
       keyframes: {
         'slide-in-top': {
@@ -64,7 +70,11 @@ module.exports = {
         ['Cal Sans', ...defaultTheme.fontFamily.sans],
         { fontFeatureSettings: '"ss02"' },
       ],
+      mono: defaultTheme.fontFamily.mono,
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/container-queries'),
+    require('@tailwindcss/typography'),
+  ],
 }

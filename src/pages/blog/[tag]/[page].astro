@@ -1,0 +1,95 @@
+---
+import { twJoin } from 'tailwind-merge'
+import { getCollection, type CollectionEntry } from 'astro:content'
+import type { GetStaticPaths } from 'astro'
+
+// import Search from '@/components/search.tsx'
+import ContributeBanner from '@/components/contribute-banner.astro'
+import Layout from '@/components/layout.astro'
+import PostCard from '@/components/post-card.astro'
+
+export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
+  const posts = await getCollection('blog')
+  const tags = Array.from(new Set(posts.flatMap((post) => post.data.tags)))
+  tags.push('all')
+
+  return tags.map((tag) => {
+    const filteredPosts =
+      tag === 'all'
+        ? posts
+        : posts.filter((post) => post.data.tags.includes(tag))
+
+    return paginate(filteredPosts, {
+      params: { tag },
+      pageSize: 6,
+    })
+  })
+}
+
+const { page } = Astro.props
+const params = Astro.params
+
+const featuredPosts = await getCollection('blog')
+const tags = Array.from(
+  new Set(featuredPosts.flatMap((post) => post.data.tags)),
+)
+tags.unshift('all')
+
+const posts: CollectionEntry<'blog'>[] = page.data
+---
+
+<Layout title='Blog' class='flex flex-col gap-32 pb-20 lg:pb-32'>
+  <div class='flex flex-col gap-12 mt-24'>
+    <h1 class='font-heading text-5xl'>Featured post</h1>
+    <PostCard post={featuredPosts[0]} />
+  </div>
+  <ContributeBanner />
+  <section>
+    <div
+      class='flex flex-col lg:flex-row justify-between items-center gap-8 w-full mb-12'
+    >
+      <ul class='flex gap-6'>
+        {
+          tags.map((tag: string) => (
+            <li>
+              <a
+                href={`/blog/${tag}/1`}
+                class={twJoin(
+                  params.tag === tag && 'text-link',
+                  'hover:underline capitalize',
+                )}
+              >
+                {tag}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <!-- <Search client:visible /> -->
+    </div>
+    <ul class='grid lg:grid-cols-3 gap-6 mb-20 lg:mb-40'>
+      {posts.map((post) => <PostCard post={post} />)}
+    </ul>
+    <div class='flex justify-center items-center gap-6 lg:gap-12'>
+      <a
+        href={page.url.prev}
+        class={twJoin(
+          'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
+          !page.url.prev && 'cursor-not-allowed opacity-50',
+        )}
+      >
+        &lt;
+      </a>
+      <p class='font-heading text-xl'>{page.currentPage}</p>
+      <a
+        href={page.url.next}
+        class={twJoin(
+          'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
+          !page.url.next && 'cursor-not-allowed opacity-50',
+        )}
+      >
+        &gt;
+      </a>
+    </div>
+  </section>
+</Layout>
