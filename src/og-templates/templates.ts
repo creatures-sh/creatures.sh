@@ -73,16 +73,4 @@ export const templates: Record<string, (data?: Record<string, any>) => any> = {
       </div>
     </div>
   `,
-  article: (data) => html`
-    <div
-      style="gap: 50px;"
-      tw="w-full h-full flex flex-col items-center justify-center"
-    >
-      <img
-        src="${data?.url}/blog/${data?.image}.jpg"
-        style="object-fit: cover; object-position: center;"
-        tw="absolute inset-0"
-      />
-    </div>
-  `,
 }
