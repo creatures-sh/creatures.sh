@@ -43,19 +43,19 @@ const author = await getEntry(
           alt={`A photo of ${author.data.name}`}
           src={author.data.avatar.src}
         />
-        <p class='text-sm text-tertiary'>{author.data.username}</p>
+        <p class='text-sm @3xl:text-lg text-tertiary'>{author.data.username}</p>
         <hr class='flex-1 border-border' />
-        <p class='text-sm text-tertiary'>
+        <p class='text-sm @3xl:text-lg text-tertiary'>
           {format(post.data.publishDate, 'MMM d')}
         </p>
       </div>
-      <h4 class='font-heading text-2xl'>{post.data.title}</h4>
-      <p class='text-sm text-secondary line-clamp-3'>
+      <h4 class='font-heading text-2xl @3xl:text-4xl'>{post.data.title}</h4>
+      <p class='text-sm @3xl:text-lg text-secondary line-clamp-3'>
         {post.data.excerpt.trim().slice(0, 320)}
       </p>
       <a
         href={`/blog/${post.slug}`}
-        class='text-link fwwont-medium hover:underline hover:underline-offset-2 after:content-[" "] after:absolute after:inset-0'
+        class='text-link @3xl:text-lg font-medium hover:underline hover:underline-offset-2 after:content-[" "] after:absolute after:inset-0'
         >Read on -&gt;</a
       >
     </div>
