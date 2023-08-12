@@ -12,8 +12,8 @@ excerpt:
 ---
 
 <iframe
-  width='560'
-  height='315'
+  width='100%'
+  style='aspect-ratio: 16/9'
   src='https://www.youtube-nocookie.com/embed/dr6UAQUAiu4'
   title='Getting started with CSS Nesting'
   frameborder='0'
