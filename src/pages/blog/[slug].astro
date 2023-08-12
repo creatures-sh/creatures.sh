@@ -7,7 +7,7 @@ import { getEntry, getCollection } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
 
 import Layout from '@/components/layout.astro'
-import ContributeBanner from '@/components/contribute-banner.astro'
+import WriteBanner from '@/components/write-banner.astro'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection('blog')
@@ -148,20 +148,18 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
       ))
     }
   </div>
-  <ContributeBanner />
+  <WriteBanner />
 </Layout>
 
 <script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      const id = entry.target.parentElement.getAttribute('id');
-
-      console.log(entry.intersectionRatio)
+      const id = entry.target.parentElement?.getAttribute('id');
 
       if (entry.intersectionRatio > 0) {
-        document.querySelector(`#toc li a[href="#${id}"]`).parentElement.classList.add('active');
+        document.querySelector(`#toc li a[href="#${id}"]`)?.parentElement?.classList.add('active');
       } else {
-        document.querySelector(`#toc li a[href="#${id}"]`).parentElement.classList.remove('active');
+        document.querySelector(`#toc li a[href="#${id}"]`)?.parentElement?.classList.remove('active');
       }
     });
   });

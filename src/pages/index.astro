@@ -7,7 +7,7 @@ import ContributeBanner from '@/components/contribute-banner.astro'
 import Panel from '@/components/panel.astro'
 import github from '@/components/icons/github.svg?raw'
 import twitch from '@/components/icons/twitch.svg?raw'
-import { GITHUB_URL, TWITCH_URL, LAST_STREAM_VOD } from '@/config'
+import { TWITCH_URL, STREAM_PROJECT, LAST_STREAM_VOD } from '@/config'
 import PostCard from '@/components/post-card.astro'
 
 const latestPosts = (await getCollection('blog')).slice(0, 3)
@@ -23,7 +23,7 @@ const latestPosts = (await getCollection('blog')).slice(0, 3)
         <h3 class='text-2xl'>Go to the project</h3>
         <a
           class='flex gap-2 py-2 px-4 md:px-8 button bg-white font-bold text-rich-black'
-          href={GITHUB_URL}
+          href={STREAM_PROJECT}
           rel='external nofollow'
         >
           <Fragment set:html={github} />
