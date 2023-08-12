@@ -50,7 +50,7 @@ const ogImageUrl = `${Astro.url.origin}/og/default.png`
         section: post.data.tags[0],
       },
     },
-    twitter: { creator: author?.data.twitter },
+    twitter: { creator: author?.data.twitter, image: ogImageUrl },
   }}
   class='pb-20 lg:pb-40'
 >
