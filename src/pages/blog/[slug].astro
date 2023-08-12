@@ -1,13 +1,13 @@
 ---
 import { twJoin } from 'tailwind-merge'
 import { format } from 'date-fns'
-import path from 'path'
 import { Image } from 'astro:assets'
 import { getEntry, getCollection } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
 
 import Layout from '@/components/layout.astro'
 import WriteBanner from '@/components/write-banner.astro'
+import { featuredImages } from '@/utils/featured-images'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const posts = await getCollection('blog')
@@ -23,11 +23,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 const { post } = Astro.props
+const featuredImage = featuredImages[post.data.image]
+
 const author = await getEntry('authors', post.data.author.slug)
 
 const { Content, remarkPluginFrontmatter, headings } = await post.render()
 
-const ogImageUrl = `${Astro.url.origin}/og/default.png`
+const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
+  url: Astro.url.origin,
+  image: post.data.image ?? 'featured-1.jpg',
+  author: author?.data.username ?? 'nikolovlazar',
+  title: post.data.title,
+}).toString()}`
 ---
 
 <Layout
@@ -58,7 +65,7 @@ const ogImageUrl = `${Astro.url.origin}/og/default.png`
     class='absolute inset-x-0 top-[96px] lg:top-0 w-full h-[40vh] lg:h-[70vh] overflow-hidden after:bg-noise-texture after:absolute after:inset-0 after:bg-auto after:bg-repeat after:opacity-[0.8] after:mix-blend-overlay'
   >
     <Image
-      src={post.data.image}
+      src={featuredImage}
       alt={`Featured image of the article: ${post.data.title}`}
       class='w-full h-full object-center object-cover absolute inset-0 z-0 animate-smooth-enter-top'
     />

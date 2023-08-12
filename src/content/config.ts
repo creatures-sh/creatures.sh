@@ -15,14 +15,12 @@ export const authors = defineCollection({
 
 const blog = defineCollection({
   type: 'content',
-  schema: ({ image }) =>
+  schema: () =>
     z.object({
       title: z.string(),
       publishDate: z.date(),
       updateDate: z.date(),
-      image: image().refine((img) => img.width >= 440, {
-        message: 'Featured image must be at least 440px wide!',
-      }),
+      image: z.string(),
       tags: z.array(z.string()),
       author: reference('authors'),
       excerpt: z.string(),
