@@ -40,6 +40,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
 <Layout
   seo={{
     title: `${post.data.title} | creatures.dev`,
+    description: post.data.excerpt,
     openGraph: {
       basic: {
         title: `${post.data.title} | creatures.dev`,
@@ -89,13 +90,13 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
   </div>
 
   <div
-    class='grid grid-cols-1 lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12 overflow-hidden'
+    class='grid grid-cols-1 lg:grid-cols-[0_60ch_1fr] xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12'
   >
     <div
-      class='flex flex-col gap-3 lg:px-2 py-4 lg:py-12 h-fit lg:sticky top-8 lg:col-start-3'
+      class='flex flex-col gap-3 lg:px-8 py-4 lg:py-12 h-fit lg:sticky top-8 lg:col-start-3'
     >
       <span class='text-sm font-bold text-secondary py-3'>ON THIS PAGE</span>
-      <ul>
+      <ul id="toc">
         {
           headings.map(
             ({
@@ -127,6 +128,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
       </ul>
     </div>
     <div
+      id="content"
       class='lg:col-start-2 row-start-2 lg:row-start-1 prose prose-slate lg:prose-xl dark:prose-invert prose-headings:no-underline prose-a:no-underline'
     >
       <h1 class='mb-10'>{post.data.title}</h1>
@@ -148,6 +150,26 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
   </div>
   <ContributeBanner />
 </Layout>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.parentElement.getAttribute('id');
+
+      console.log(entry.intersectionRatio)
+
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`#toc li a[href="#${id}"]`).parentElement.classList.add('active');
+      } else {
+        document.querySelector(`#toc li a[href="#${id}"]`).parentElement.classList.remove('active');
+      }
+    });
+  });
+
+  document.querySelectorAll('#content *:is(h2, h3, h4, h5, h6) a[href^="#"]').forEach((heading) => {
+    observer.observe(heading);
+  })
+</script>
 
 <style is:global>
   h1,
@@ -183,5 +205,9 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
       rgba(2, 2, 9, 0.67) 44.84%,
       #020209 100%
     );
+  }
+
+  #toc :global(li.active) {
+    @apply text-link;
   }
 </style>

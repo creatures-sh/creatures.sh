@@ -10,6 +10,8 @@
     "start": "astro dev"
   },
   "dependencies": {
+    "@astro-community/astro-embed-youtube": "^0.4.0",
+    "@astrojs/mdx": "^0.19.7",
     "@astrojs/netlify": "^2.5.2",
     "@astrojs/sitemap": "^2.0.1",
     "@astrojs/solid-js": "^2.2.0",

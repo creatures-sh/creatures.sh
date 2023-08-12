@@ -4,17 +4,16 @@ import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import netlify from '@astrojs/netlify/functions'
 import solidJs from '@astrojs/solid-js'
-
+import mdx from '@astrojs/mdx'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-
 import remarkReadingTime from './src/utils/remark-reading-time'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://creatures.dev',
-  integrations: [tailwind(), sitemap(), solidJs()],
+  integrations: [tailwind(), sitemap(), solidJs(), mdx()],
   output: 'hybrid',
   adapter: netlify(),
   markdown: {

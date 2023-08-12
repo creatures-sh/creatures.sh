@@ -47,7 +47,7 @@ const author = await getEntry(
       </div>
       <h4 class='font-heading text-2xl'>{post.data.title}</h4>
       <p class='text-sm text-secondary line-clamp-3'>
-        {post.body.trim().slice(0, 320)}
+        {post.data.excerpt.trim().slice(0, 320)}
       </p>
       <a
         href={`/blog/${post.slug}`}
