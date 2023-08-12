@@ -39,11 +39,11 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
 
 <Layout
   seo={{
-    title: `${post.data.title} | creatures.dev`,
+    title: post.data.title,
     description: post.data.excerpt,
     openGraph: {
       basic: {
-        title: `${post.data.title} | creatures.dev`,
+        title: post.data.title,
         image: ogImageUrl,
         type: 'article',
       },
