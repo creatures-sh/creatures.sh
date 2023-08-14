@@ -62,7 +62,7 @@ const latestPosts = (await getCollection('blog')).slice(0, 3)
         class='flex flex-col lg:flex-row lg:justify-between items-center w-full mb-8 gap-8'
       >
         <h3 class='font-heading text-3xl xl:text-5xl'>Latest posts 🐙</h3>
-        <a href='/blog/all/1' class='text-link'>See all -&gt;</a>
+        <a href='/blog' class='text-link'>See all -&gt;</a>
       </div>
       <ul class='grid lg:grid-cols-3 gap-6'>
         {latestPosts.map((post) => <PostCard post={post} />)}
