@@ -9,9 +9,5 @@ export const featuredImages: Record<string, ImageMetadata> = {}
 
 for (const path in imagesImport) {
   const name = path.split('/').pop() ?? ''
-  console.log(name)
   featuredImages[name] = imagesImport[path] as ImageMetadata
 }
-
-console.log('DONE')
-console.log(featuredImages)
