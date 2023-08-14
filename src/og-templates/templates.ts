@@ -75,7 +75,10 @@ export const templates: Record<string, (data?: Record<string, any>) => any> = {
   `,
   article: (data) => html`
     <div tw="flex relative w-[1200px] h-[630px]">
-      <img tw="absolute inset-0 z-0" src="${data?.url}/blog/${data?.image}" />
+      <img
+        tw="absolute inset-0 z-0"
+        src="${data?.url}/assets/blog/${data?.image}"
+      />
       <div tw="flex absolute inset-0 z-1 bg-black bg-opacity-60"></div>
       <div
         tw="relative w-full h-full flex flex-col p-16 justify-center items-center text-white"

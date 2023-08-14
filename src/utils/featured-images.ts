@@ -1,5 +1,13 @@
-import featured1 from '../assets/blog/featured-1.jpg'
+import type { ImageMetadata } from 'astro'
 
-export const featuredImages: Record<string, ImageMetadata> = {
-  'featured-1.jpg': featured1,
+const imagesImport = import.meta.glob('../assets/blog/*.jpg', {
+  eager: true,
+  import: 'default',
+})
+
+export const featuredImages: Record<string, ImageMetadata> = {}
+
+for (const path in imagesImport) {
+  const name = path.split('/').pop() ?? ''
+  featuredImages[name] = imagesImport[path] as ImageMetadata
 }
