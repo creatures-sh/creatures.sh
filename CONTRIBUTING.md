@@ -24,6 +24,7 @@ forward to your contributions. 🎉
   - [Blog posts](#blog-posts)
     - [Writing instructions](#writing-instructions)
     - [PR instructions](#pr-instructions)
+    - [Cross-posting policy](#cross-posting-policy)
 - [License](#license)
 
 ## Setting up the project
@@ -110,6 +111,10 @@ idea, you can start writing the article and open a PR of your first draft.
 
 5. We'll review your PR and give you feedback. If everything is good, we'll
    merge it and publish your article.
+
+#### Cross-posting policy
+
+Cross-posting to creatures.dev is welcomed! If you'd like to share your own article that you published elsewhere, just add the `canonical` property in the frontmatter of your article that points to your original blog post, wherever it may be. Feel free to share your PR with the rest of the community in Discord after you open it.
 
 ## License
 
