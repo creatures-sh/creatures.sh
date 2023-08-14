@@ -114,7 +114,7 @@ idea, you can start writing the article and open a PR of your first draft.
 
 #### Cross-posting policy
 
-Cross-posting to creatures.dev is welcomed! If you'd like to share your own article that you published elsewhere, just add the `canonical` property in the frontmatter of your article that points to your original blog post, wherever it may be. Feel free to share your PR with the rest of the community in Discord after you open it.
+Cross-posting to creatures.dev is welcomed! If you'd like to share your own article that you published elsewhere, just add the `canonicalUrl` property in the frontmatter of your article that points to your original blog post, wherever it may be. Feel free to share your PR with the rest of the community in Discord after you open it.
 
 ## License
 
