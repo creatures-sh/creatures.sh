@@ -24,6 +24,7 @@ const blog = defineCollection({
       tags: z.array(z.string()),
       author: reference('authors'),
       excerpt: z.string(),
+      canonicalUrl: z.string().optional(),
     }),
 })
 
