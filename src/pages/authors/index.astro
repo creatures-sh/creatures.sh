@@ -1,0 +1,90 @@
+---
+import Layout from '@/components/layout.astro'
+import Panel from '@/components/panel.astro'
+import { Image } from 'astro:assets'
+import { twMerge } from 'tailwind-merge'
+import lazar from '@/assets/discord-avatars/member-1.webp'
+import tentacle from '@/assets/authors/tentacle.png'
+import WriteBanner from '@/components/write-banner.astro'
+import PostCard from '@/components/post-card.astro'
+import { getCollection } from 'astro:content'
+
+const { class: className = '' } = Astro.props
+
+const author = {
+  name: 'Lazar Nikolov',
+  handle: 'nikolovlazar',
+  badges: ['content creator', 'devrel', 'software engineer'],
+}
+
+const posts = await getCollection('blog')
+---
+
+<Layout seo={{ title: 'Authors' }}>
+  <Panel
+    class={twMerge(
+      className,
+      'flex flex-col md:flex-row justify-center py-5 items-center mt-40 mb-20',
+    )}
+    size='lg'
+  >
+    <div>
+      <Image
+        src={lazar}
+        alt="author's pfp"
+        class='relative h-32 w-32 z-10 rounded-2xl transform rotate-[-6.73deg]'
+      />
+      <Image
+        src={tentacle}
+        alt="creature's tentacle"
+        class='h-60 w-40 absolute z-0 -translate-y-60 -translate-x-2'
+      />
+    </div>
+    <div class='pt-9 md:pl-9'>
+      <p class='text-tertiary'>AUTHOR</p>
+      <h4>{author.name}</h4>
+      <p class='text-tertiary'>{author.handle}</p>
+      <div class='flex flex-col md:flex-row gap-3 pt-6'>
+        {
+          author.badges.map((badge) => (
+            <Panel
+              class={twMerge(
+                className,
+                'flex flex-col items-center justify-center py-1 px-2 bg-[#1B1B20] text-base',
+              )}
+              size='sm'
+            >
+              {badge}
+            </Panel>
+          ))
+        }
+      </div>
+    </div>
+  </Panel>
+  <section class='mb-32'>
+    <h2>{`Posts(${posts.length})`}</h2>
+    <!-- Breadcrumbs -->
+    <div class='my-10'></div>
+    <div class='grid grid-cols-3 grid-rows-3 gap-6 mb-32'>
+      <div class='col-span-2 row-span-2'>
+        <PostCard post={posts[0]} />
+      </div>
+      <div class='col-start-3'>
+        <PostCard post={posts[0]} />
+      </div>
+      <div class='col-start-3 row-start-2 grid-flow-col'>
+        <PostCard post={posts[0]} />
+      </div>
+      <div class='row-start-3'>
+        <PostCard post={posts[0]} />
+      </div>
+      <div class='row-start-3'>
+        <PostCard post={posts[0]} />
+      </div>
+      <div class='row-start-3'>
+        <PostCard post={posts[0]} />
+      </div>
+    </div>
+    <WriteBanner class='mb-64' />
+  </section>
+</Layout>
