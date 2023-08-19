@@ -73,16 +73,23 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
     <div class='hero-backdrop'></div>
   </section>
   <div class='max-lg:hidden lg:h-[42vh] lg:-mt-20'></div>
-  <h1 class='lg:hidden mb-10 max-lg:text-center leading-tight'>{post.data.title}</h1>
+  <h1 class='lg:hidden mb-10 max-lg:text-center leading-tight'>
+    {post.data.title}
+  </h1>
   <div class='flex items-center max-lg:justify-center gap-3 my-6'>
-    <img
-      class='rounded-full'
-      width='24'
-      height='24'
-      alt={`A photo of ${author?.data.name}`}
-      src={author?.data.avatar.src}
-    />
-    <p class='text-tertiary'>{author?.data.username}</p>
+    <a
+      href={`/authors/${post.data.author.slug}`}
+      class='flex items-center gap-1.5 z-10 text-link font-medium hover:underline hover:underline-offset-2'
+    >
+      <img
+        class='rounded-full'
+        width='24'
+        height='24'
+        alt={`A photo of ${author?.data.name}`}
+        src={author?.data.avatar.src}
+      />
+      <p class='text-tertiary'>{author?.data.username}</p>
+    </a>
     <p class='text-tertiary lg:hidden'>・</p>
     <hr class='max-lg:hidden flex-1 border-border' />
     <p class='text-sm text-tertiary'>
@@ -99,7 +106,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
       class='hidden lg:flex flex-col gap-3 lg:px-8 py-4 lg:py-12 h-fit lg:sticky top-8 lg:col-start-3'
     >
       <span class='text-sm font-bold text-secondary py-3'>ON THIS PAGE</span>
-      <ul id="toc">
+      <ul id='toc'>
         {
           headings.map(
             ({
@@ -131,10 +138,12 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
       </ul>
     </div>
     <div
-      id="content"
+      id='content'
       class='xl:col-start-2 row-start-2 lg:row-start-1 prose-xl prose-slate lg:prose-xl dark:prose-invert prose-headings:no-underline prose-a:no-underline'
     >
-      <h1 class='max-lg:hidden mb-10 max-lg:text-center leading-tight'>{post.data.title}</h1>
+      <h1 class='max-lg:hidden mb-10 max-lg:text-center leading-tight'>
+        {post.data.title}
+      </h1>
       <Content />
     </div>
   </div>
@@ -155,21 +164,27 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
 </Layout>
 
 <script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const id = entry.target.parentElement?.getAttribute('id');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.parentElement?.getAttribute('id')
 
       if (entry.intersectionRatio > 0) {
-        document.querySelector(`#toc li a[href="#${id}"]`)?.parentElement?.classList.add('active');
+        document
+          .querySelector(`#toc li a[href="#${id}"]`)
+          ?.parentElement?.classList.add('active')
       } else {
-        document.querySelector(`#toc li a[href="#${id}"]`)?.parentElement?.classList.remove('active');
+        document
+          .querySelector(`#toc li a[href="#${id}"]`)
+          ?.parentElement?.classList.remove('active')
       }
-    });
-  });
-
-  document.querySelectorAll('#content *:is(h2, h3, h4, h5, h6) a[href^="#"]').forEach((heading) => {
-    observer.observe(heading);
+    })
   })
+
+  document
+    .querySelectorAll('#content *:is(h2, h3, h4, h5, h6) a[href^="#"]')
+    .forEach((heading) => {
+      observer.observe(heading)
+    })
 </script>
 
 <style is:global>

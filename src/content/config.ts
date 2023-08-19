@@ -10,6 +10,7 @@ export const authors = defineCollection({
       name: z.string(),
       username: z.string(),
       twitter: z.string().optional(),
+      tags: z.array(z.string()),
     }),
 })
 

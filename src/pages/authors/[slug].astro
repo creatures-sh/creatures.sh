@@ -1,0 +1,103 @@
+---
+import Layout from '@/components/layout.astro'
+import Panel from '@/components/panel.astro'
+import { Image } from 'astro:assets'
+import { twMerge } from 'tailwind-merge'
+import tentacle from '@/assets/authors/tentacle.png'
+import WriteBanner from '@/components/write-banner.astro'
+import PostCard from '@/components/post-card.astro'
+import { getCollection, type CollectionEntry } from 'astro:content'
+import type { GetStaticPaths } from 'astro'
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const authors = await getCollection('authors')
+
+  return authors.map((author) => ({
+    params: {
+      slug: author.slug,
+    },
+    props: {
+      author,
+    },
+  }))
+}
+
+const {
+  author: {
+    data: { name, username, tags, avatar },
+  },
+} = Astro.props
+
+const { class: className = '' } = Astro.props
+
+const posts: CollectionEntry<'blog'>[] = await getCollection('blog')
+const filteredPosts = posts.filter(
+  (post) => post.data.author.slug === Astro.params.slug,
+)
+const [featuredPost, ...rest] = filteredPosts
+---
+
+<Layout seo={{ title: 'Authors' }}>
+  <Panel
+    class={twMerge(
+      className,
+      'flex flex-col md:flex-row justify-center py-5 items-center mt-40 mb-20',
+    )}
+    size='lg'
+  >
+    <div>
+      <Image
+        src={avatar}
+        alt="author's pfp"
+        class='relative h-32 w-32 z-10 rounded-2xl rotate-[-6.73deg]'
+      />
+      <Image
+        src={tentacle}
+        alt="creature's tentacle"
+        class='h-60 w-40 absolute z-0 -translate-y-60 -translate-x-2'
+      />
+    </div>
+    <div class='pt-9 md:pl-9'>
+      <p class='text-tertiary'>AUTHOR</p>
+      <h4>{name}</h4>
+      <a class='text-tertiary'>{username}</a>
+      <div class='flex flex-col md:flex-row gap-3 pt-6'>
+        {
+          tags.map((tag: string) => (
+            <Panel
+              class={twMerge(
+                className,
+                'flex flex-col items-center justify-center py-1 px-2 bg-[#1B1B20] text-base',
+              )}
+              size='sm'
+            >
+              {tag}
+            </Panel>
+          ))
+        }
+      </div>
+    </div>
+  </Panel>
+  <section class='mb-32'>
+    <h2>{`Posts(${filteredPosts.length})`}</h2>
+    <!-- TODO: Breadcrumbs -->
+    <div class='my-10'></div>
+    {
+      filteredPosts.length > 0 ? (
+        <>
+          <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 gap-6 mb-32'>
+            <div class='md:col-span-2 lg:col-span-3 row-span-full'>
+              <PostCard post={featuredPost} />
+            </div>
+            {rest.map((post) => (
+              <PostCard post={post} />
+            ))}
+          </div>
+        </>
+      ) : (
+        <h2>No posts found</h2>
+      )
+    }
+  </section>
+  <WriteBanner class='mb-64' />
+</Layout>

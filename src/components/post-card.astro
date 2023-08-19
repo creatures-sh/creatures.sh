@@ -10,7 +10,7 @@ type Props = {
 
 const { post } = Astro.props
 
-const featuredImage = featuredImages[post.data.image];
+const featuredImage = featuredImages[post.data.image]
 
 const author = await getEntry(
   post.data.author.collection,
@@ -36,14 +36,21 @@ const author = await getEntry(
     </div>
     <div class='w-full p-4 flex flex-col gap-3 @3xl:gap-6 @3xl:pr-20'>
       <div class='flex items-center gap-1.5'>
-        <img
-          class='rounded-full'
-          width='18'
-          height='18'
-          alt={`A photo of ${author.data.name}`}
-          src={author.data.avatar.src}
-        />
-        <p class='text-sm @3xl:text-lg text-tertiary'>{author.data.username}</p>
+        <a
+          href={`/authors/${post.data.author.slug}`}
+          class='flex items-center gap-1.5 z-10 text-link font-medium hover:underline hover:underline-offset-2'
+        >
+          <img
+            class='rounded-full'
+            width='18'
+            height='18'
+            alt={`A photo of ${author.data.name}`}
+            src={author.data.avatar.src}
+          />
+          <p class='text-sm @3xl:text-lg text-tertiary'>
+            {author.data.username}
+          </p>
+        </a>
         <hr class='flex-1 border-border' />
         <p class='text-sm @3xl:text-lg text-tertiary'>
           {format(post.data.publishDate, 'MMM d')}
