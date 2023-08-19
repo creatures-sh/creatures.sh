@@ -83,26 +83,24 @@ const featuredPost = filteredPosts[0]
     <div class='my-10'></div>
     {
       filteredPosts.length > 0 ? (
-        <div class='grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 gap-6 mb-32'>
-          <div class='md:col-span-2 md:row-span-2'>
-            <PostCard post={featuredPost} />
+        <>
+          <div class='grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 mb-32'>
+            <div class='md:col-span-2 md:row-span-2'>
+              <PostCard post={featuredPost} />
+            </div>
+            <div class='md:col-start-3'>
+              <PostCard post={filteredPosts[0]} />
+            </div>
+            <div class='md:col-start-3 md:row-start-2'>
+              <PostCard post={filteredPosts[0]} />
+            </div>
           </div>
-          <div class='md:col-start-3'>
-            <PostCard post={filteredPosts[1]} />
+          <div>
+            {filteredPosts.slice(3).map((post) => (
+              <PostCard post={post} />
+            ))}
           </div>
-          <div class='md:col-start-3 md:row-start-2'>
-            <PostCard post={filteredPosts[2]} />
-          </div>
-          <div class='md:row-start-3'>
-            <PostCard post={filteredPosts[3]} />
-          </div>
-          <div class='md:row-start-3'>
-            <PostCard post={filteredPosts[4]} />
-          </div>
-          <div class='md:row-start-3'>
-            <PostCard post={filteredPosts[5]} />
-          </div>
-        </div>
+        </>
       ) : (
         <h2>No posts found</h2>
       )
