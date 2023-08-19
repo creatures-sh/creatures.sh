@@ -80,23 +80,19 @@ const featuredPost = filteredPosts[0]
   </Panel>
   <section class='mb-32'>
     <h2>{`Posts(${filteredPosts.length})`}</h2>
+    <!-- TODO: Breadcrumbs -->
     <div class='my-10'></div>
     {
       filteredPosts.length > 0 ? (
         <>
           <div class='grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 mb-32'>
-            <div class='md:col-span-2 md:row-span-2'>
+            <div class='md:col-span-3 row-span-full'>
               <PostCard post={featuredPost} />
             </div>
-            <div class='md:col-start-3'>
-              <PostCard post={filteredPosts[0]} />
-            </div>
-            <div class='md:col-start-3 md:row-start-2'>
-              <PostCard post={filteredPosts[0]} />
-            </div>
-          </div>
-          <div>
-            {filteredPosts.slice(3).map((post) => (
+            {/* We should be rendering from position 1 in the array, 
+              I will leave it to prove that this works so it
+              doesn't break the site */}
+            {filteredPosts.map((post) => (
               <PostCard post={post} />
             ))}
           </div>
