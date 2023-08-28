@@ -6,6 +6,7 @@ image: 'chaos-2.jpg'
 tags: ["vim", "neovim", "vscode", "keybindings", "text editor"]
 author: andrej-acevski
 excerpt: "Vim keybindings are important because they allow you to edit text with a precision and speed that traditional editors struggle to match. The efficiency gains from Vim's keybindings translate into saved time and enhanced productivity. While the learning curve might be steep, the benefits are undeniable, making the journey towards mastering Vim's keybindings an endeavor well worth the effort."
+canonicalUrl: "https://aacevski.com/blog/the-importance-of-vim-keybindings"
 ---
 
 You might be wondering if this will be an article where I'll speak on how you can flex to your friends and colleagues that you use Vim. Well, you're wrong. This article is about the importance of Vim keybindings and how they can help you become a better programmer and okay, maybe a little bit of flexing.
@@ -95,4 +96,4 @@ At the end of the day you don't have to use Vim if it's not your cup of tea. How
 And to finish this article with a joke:
 > _Vim is not just a text editor, it's a way of life. It's a philosophy. It's a way of thinking. It's a way of being. It's a way of life._
 
-Thanks for reading and I hope you learned something new today. If you have any questions or comments, feel free to join the creatures.dev Discord server and ask away. I'll be happy to help you out.
+Thanks for reading and I hope you learned something new today. If you have any questions or comments, feel free to ask me on my socials. I'll be happy to answer them. 
