@@ -5,7 +5,7 @@ publishDate: 2023-08-28
 image: 'chaos-2.jpg'
 tags: ["vim", "neovim", "vscode", "keybindings", "text editor"]
 author: andrej-acevski
-excerpt: "Vim keybindings are important because they allow you to edit text with a precision and speed that traditional editors struggle to match. The efficiency gains from Vim's keybindings translate into saved time and enhanced productivity. While the learning curve might be steep, the benefits are undeniable, making the journey towards mastering Vim's keybindings an endeavor well worth the effort."
+excerpt: "Vim, the past, the present and the future. How can it help you become more productive and efficient in your day to day life as a developer?"
 canonicalUrl: "https://aacevski.com/blog/the-importance-of-vim-keybindings"
 ---
 
