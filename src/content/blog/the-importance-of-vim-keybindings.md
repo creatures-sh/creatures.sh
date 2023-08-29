@@ -21,16 +21,16 @@ So after over 30 years, how are we using Vim nowadays? For starters, you can add
 Vim keybindings are important because they allow you to edit text with a precision and speed that traditional editors struggle to match. The efficiency gains from Vim's keybindings translate into saved time and enhanced productivity. While the learning curve might be steep, the benefits are undeniable, making the journey towards mastering Vim's keybindings an endeavor well worth the effort.
 
 For example: 
+
 ```js
-const myFunction = () => {
+const myFunction = ({ data: { code: string } }) => {
   console.log('Hello World');
 }
 ```
 
-If I want to change the name of the function, I can do it in a couple of seconds with Vim keybindings. I just need to type `ciw` and then the new name of the function. In this case, I'll change it to `myNewFunction`. So, the result will be:
-
+If I want to remove the arguments to the function, you can do it by `di(` which means delete inside `(`. So, the result would be:
 ```js
-const myNewFunction = () => {
+const myFunction = () => {
   console.log('Hello World');
 }
 ```
@@ -65,7 +65,7 @@ Or if you're like me and you prefer to watch videos, you can watch this [video](
 
 When it comes to Neovim, I would suggest you not to re-create VSCode in Neovim. You can get lost in the rabbit hole of plugins and configurations. Instead, I would suggest you to start with the basics and then slowly add plugins and configurations as you need them.
 
-Simple is better than complex.
+**Simple is better than complex.**
 
 ### Vim keybindings that you should know
 
@@ -93,7 +93,12 @@ You can use this or any blog post as a reference however the best way to learn V
 
 At the end of the day you don't have to use Vim if it's not your cup of tea. However we can't deny the importance of it and at the end of the day, you will at least be able to work on a server and modify files without too much hassle. 
 
+However, if you do decide to take on the Vim adventure, one thing to keep in mind is that you should create an enviorment in which your mind works best.
+
+The Vim keybinds are made to make sense and be easy to remember.
+Vim is a pattern based editor, so once you learn the patterns, you'll be able to use Vim without thinking about it.
+
 And to finish this article with a joke:
-> _Vim is not just a text editor, it's a way of life. It's a philosophy. It's a way of thinking. It's a way of being. It's a way of life._
+> _Vim is not just a text editor, it's a way of life. It's a philosophy. It's a way of thinking. It's a way of being._
 
 Thanks for reading and I hope you learned something new today. If you have any questions or comments, feel free to ask me on my socials. I'll be happy to answer them. 
