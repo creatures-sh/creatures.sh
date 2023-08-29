@@ -93,7 +93,7 @@ You can use this or any blog post as a reference however the best way to learn V
 
 At the end of the day you don't have to use Vim if it's not your cup of tea. However we can't deny the importance of it and at the end of the day, you will at least be able to work on a server and modify files without too much hassle. 
 
-However, if you do decide to take on the Vim adventure, one thing to keep in mind is that you should create an enviorment in which your mind works best.
+However, if you do decide to take on the Vim adventure, one thing to keep in mind is that you should create an environment in which your mind works best.
 
 The Vim keybinds are made to make sense and be easy to remember.
 Vim is a pattern based editor, so once you learn the patterns, you'll be able to use Vim without thinking about it.
