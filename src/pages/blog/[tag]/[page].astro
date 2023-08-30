@@ -29,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 const { page } = Astro.props
 const params = Astro.params
 
-const featuredPosts = await getCollection('blog')
+const featuredPosts = (await getCollection('blog')).sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
 const tags = Array.from(
   new Set(featuredPosts.flatMap((post) => post.data.tags)),
 )
@@ -38,7 +38,7 @@ tags.unshift('all')
 const posts: CollectionEntry<'blog'>[] = page.data
 ---
 
-<Layout title='Blog' class='flex flex-col gap-32 pb-20 lg:pb-32'>
+<Layout seo={{ title: 'Blog' }} class='flex flex-col gap-32 pb-20 lg:pb-32'>
   <div class='flex flex-col gap-12 mt-24'>
     <h1 class='font-heading text-5xl'>Featured post</h1>
     <PostCard post={featuredPosts[0]} />
