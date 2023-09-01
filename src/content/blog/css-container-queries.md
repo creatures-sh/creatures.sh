@@ -11,6 +11,16 @@ excerpt:
   viewport. In this article we're going to learn all about container queries."
 ---
 
+<iframe
+  width='100%'
+  style='aspect-ratio: 16/9'
+  src='https://www.youtube-nocookie.com/embed/CHKUFsnABw4'
+  title='CSS Container Queries'
+  frameborder='0'
+  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+  allowfullscreen
+></iframe>
+
 Unlike Media Queries, which let you apply styles to an element based on the
 viewport size, Container Queries let you apply styles to an element based on its
 own size. Talk about next level responsive design! And the best thing is, it’s
