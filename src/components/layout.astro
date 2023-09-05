@@ -1,5 +1,6 @@
 ---
 import { twMerge } from 'tailwind-merge'
+import { ViewTransitions } from 'astro:transitions'
 import { SEO, type Props as SEOProps } from 'astro-seo'
 import 'cal-sans'
 
@@ -88,6 +89,7 @@ const description =
         ...seo.openGraph,
       }}
     />
+    <ViewTransitions />
   </head>
   <body class='min-h-screen overflow-x-hidden bg-rich-black text-white'>
     <Header />
