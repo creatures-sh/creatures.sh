@@ -9,7 +9,7 @@ import CalSans from '@/og-templates/fonts/CalSans-SemiBold.ttf'
 export const prerender = false
 
 // inspired by TheOtterlord: https://github.com/TheOtterlord/astro-opengraph
-export const get: APIRoute = async ({ params, request }) => {
+export const GET: APIRoute = async ({ params, request }) => {
   const { slug } = params
   const { origin } = new URL(request.url)
 

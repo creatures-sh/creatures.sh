@@ -1,9 +1,8 @@
-import { h, s } from 'hastscript'
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import netlify from '@astrojs/netlify/functions'
-import solidJs from '@astrojs/solid-js'
+import solid from '@astrojs/solid-js'
 import mdx from '@astrojs/mdx'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
@@ -13,7 +12,7 @@ import remarkReadingTime from './src/utils/remark-reading-time'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://creatures.dev',
-  integrations: [tailwind(), sitemap(), solidJs(), mdx()],
+  integrations: [tailwind(), sitemap(), solid(), mdx()],
   output: 'hybrid',
   adapter: netlify(),
   markdown: {
@@ -35,9 +34,6 @@ export default defineConfig({
     shikiConfig: {
       theme: 'material-theme-ocean',
     },
-  },
-  experimental: {
-    assets: true,
   },
   vite: {
     plugins: [rawFonts(['.ttf'])],
