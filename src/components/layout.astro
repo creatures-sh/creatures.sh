@@ -98,14 +98,10 @@ const description =
       <slot />
     </main>
     <Footer />
-    <script type='text/javascript'>
-      if (document.location.hostname.search('creatures.dev') === 0) {
-        let script = document.createElement('script')
-        script.async = true
-        script.defer = true
-        script.src = 'https://scripts.withcabin.com/hello.js'
-        document.head.appendChild(script)
-      }
-    </script>
+    {
+      import.meta.env.PROD && (
+        <script async defer src='https://scripts.withcabin.com/hello.js' />
+      )
+    }
   </body>
 </html>
