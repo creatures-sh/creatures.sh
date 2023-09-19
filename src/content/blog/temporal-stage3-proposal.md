@@ -12,21 +12,21 @@ excerpt:
 
 ## Introduction
 
-The handling of dates in ECMAScript has long been a source of frustration for developers. In response to this, the Temporal proposal was born. Temporal is a global object, similar to Math, that introduces a modern date and time API to the ECMAScript language. To dive deeper into the challenges associated with the existing Date object and the motivations behind Temporal, take a look at this informative article: Fixing JavaScript Date.
+The handling of dates in ECMAScript has long been a source of frustration for developers. In response to this, the Temporal proposal was born. Temporal is a global object, similar to Math, that introduces a modern date and time API to the ECMAScript language. To dive deeper into the challenges associated with the existing Date object and the motivations behind Temporal, take a look at this informative article: [Fixing JavaScript Date](https://maggiepint.com/2017/04/11/fixing-javascript-date-web-compatibility-and-reality/).
 
 ## How Temporal Solves Date and Time Challenges
 
 Temporal addresses these date and time challenges by offering:
 
-**User-Friendly APIs:** Temporal provides easy-to-use APIs for various date and time computations, making complex operations more accessible.
+- **User-Friendly APIs:** Temporal provides easy-to-use APIs for various date and time computations, making complex operations more accessible.
 
-**Time Zone Support:** It boasts first-class support for all time zones, including daylight-saving time (DST) adjustments, ensuring accurate and reliable arithmetic across different regions.
+- **Time Zone Support:** It boasts first-class support for all time zones, including daylight-saving time (DST) adjustments, ensuring accurate and reliable arithmetic across different regions.
 
-**Immutability:** Temporal enforces immutability, meaning that once a date or time object is created, it cannot be altered. This helps prevent bugs stemming from unintended modifications.
+- **Immutability:** Temporal enforces immutability, meaning that once a date or time object is created, it cannot be altered. This helps prevent bugs stemming from unintended modifications.
 
-**Strict String Parsing:** Temporal allows you to parse date and time strings in a strictly specified format, ensuring consistency in data handling.
+- **Strict String Parsing:** Temporal allows you to parse date and time strings in a strictly specified format, ensuring consistency in data handling.
 
-**Non-Gregorian Calendars:** Temporal even goes beyond the Gregorian calendar, accommodating different calendar systems, broadening its usability.
+- **Non-Gregorian Calendars:** Temporal even goes beyond the Gregorian calendar, accommodating different calendar systems, broadening its usability.
 
 Additionally, Temporal introduces separate ECMAScript classes for date-only, time-only, and other specialized use cases. This separation enhances code readability and minimizes errors that often arise from assumptions about time zones or values.
 
@@ -206,3 +206,4 @@ In conclusion, Temporal represents a significant leap forward in addressing the 
 
 - [Temporal Proposal Documentation](https://tc39.es/proposal-temporal/docs/index.html)
 - [Temporal GitHub Repository](https://github.com/tc39/proposal-temporal)
+- [Fixing JavaScript Date](https://maggiepint.com/2017/04/11/fixing-javascript-date-web-compatibility-and-reality/).
