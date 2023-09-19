@@ -204,5 +204,5 @@ In conclusion, Temporal represents a significant leap forward in addressing the 
 
 ## References
 
-[Temporal Proposal Documentation](https://tc39.es/proposal-temporal/docs/index.html)
-[Temporal GitHub Repository](https://github.com/tc39/proposal-temporal)
+- [Temporal Proposal Documentation](https://tc39.es/proposal-temporal/docs/index.html)
+- [Temporal GitHub Repository](https://github.com/tc39/proposal-temporal)
