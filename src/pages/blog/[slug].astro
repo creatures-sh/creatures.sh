@@ -100,10 +100,10 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
   </div>
 
   <div
-    class='grid grid-cols-1 xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12'
+    class='grid grid-cols-1 lg:max-xl:grid-cols-3 xl:grid-cols-[1fr_65ch_1fr] gap-3 relative lg:mt-12'
   >
     <div
-      class='hidden lg:flex flex-col gap-3 lg:px-8 py-4 lg:py-12 h-fit lg:sticky top-8 lg:col-start-3'
+      class='hidden lg:flex flex-col gap-3 lg:px-8 py-4 lg:py-12 h-fit lg:sticky top-8 xl:col-start-3'
     >
       <span class='text-sm font-bold text-secondary py-3'>ON THIS PAGE</span>
       <ul id='toc'>
@@ -139,7 +139,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
     </div>
     <div
       id='content'
-      class='xl:col-start-2 row-start-2 lg:row-start-1 prose-xl prose-slate lg:prose-xl dark:prose-invert prose-headings:no-underline prose-a:no-underline'
+      class='xl:col-start-2 row-start-2 lg:row-start-1 lg:max-xl:col-span-2 prose-xl prose-slate lg:prose-xl dark:prose-invert prose-headings:no-underlinee prose-ul:list-disc prose-strong:font-bold'
     >
       <h1 class='max-lg:hidden mb-10 max-lg:text-center leading-tight'>
         {post.data.title}
@@ -225,5 +225,24 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
 
   #toc :global(li.active) {
     @apply text-link;
+  }
+
+  :global(p > a) {
+    @apply text-link;
+  }
+
+  :global(code) {
+    background-color: theme('colors.gray.900');
+    padding: theme('spacing.1');
+    border-radius: theme('borderRadius.md');
+    border-width: 1px;
+    border-color: theme('colors.gray.800');
+  }
+  :global(pre > code) {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    border-width: 0;
+    border-color: transparent;
   }
 </style>
