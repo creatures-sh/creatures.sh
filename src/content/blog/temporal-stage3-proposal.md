@@ -44,14 +44,14 @@ To delve deeper into essential concepts such as exact time, wall-clock time, tim
 
 Temporal introduces a powerful feature known as Temporal.Now, offering real-time insights into the current system time and time zone. Developers can leverage this feature to access:
 
-`Temporal.Now.instant()`: Retrieve the current system exact time.
-`Temporal.Now.timeZoneId()`: Obtain the current system time zone.
-`Temporal.Now.zonedDateTime(calendar)`: Fetch the current date and wall-clock time in the system time zone and a specified calendar.
-`Temporal.Now.zonedDateTimeISO()`: Access the current date and wall-clock time in the system time zone using the ISO-8601 calendar.
-`Temporal.Now.plainDate(calendar)`: Obtain the current date in the system time zone and a specified calendar.
-`Temporal.Now.plainDateISO()`: Retrieve the current date in the system time zone using the ISO-8601 calendar.
-`Temporal.Now.plainTimeISO()`: Retrieve the current wall-clock time in the system time zone using the ISO-8601 calendar.
-`Temporal.Now.plainDateTime(calendar)`: Retrieve the current system date/time in the system time zone. Note that the resulting object does not remember its time zone, making it unsuitable for deriving other values in time zones that observe Daylight Saving Time (DST).
+- `Temporal.Now.instant()`: Retrieve the current system exact time.
+- `Temporal.Now.timeZoneId()`: Obtain the current system time zone.
+- `Temporal.Now.zonedDateTime(calendar)`: Fetch the current date and wall-clock time in the system time zone and a specified calendar.
+- `Temporal.Now.zonedDateTimeISO()`: Access the current date and wall-clock time in the system time zone using the ISO-8601 calendar.
+- `Temporal.Now.plainDate(calendar)`: Obtain the current date in the system time zone and a specified calendar.
+- `Temporal.Now.plainDateISO()`: Retrieve the current date in the system time zone using the ISO-8601 calendar.
+- `Temporal.Now.plainTimeISO()`: Retrieve the current wall-clock time in the system time zone using the ISO-8601 calendar.
+- `Temporal.Now.plainDateTime(calendar)`: Retrieve the current system date/time in the system time zone. Note that the resulting object does not remember its time zone, making it unsuitable for deriving other values in time zones that observe Daylight Saving Time (DST).
 
 Here's a quick example:
 
