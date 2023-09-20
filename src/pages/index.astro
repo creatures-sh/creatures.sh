@@ -10,7 +10,7 @@ import twitch from '@/components/icons/twitch.svg?raw'
 import { TWITCH_URL, STREAM_PROJECT, LAST_STREAM_VOD } from '@/config'
 import PostCard from '@/components/post-card.astro'
 
-const latestPosts = (await getCollection('blog')).slice(0, 3)
+const latestPosts = (await getCollection('blog')).sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()).slice(0, 3)
 ---
 
 <Layout>
