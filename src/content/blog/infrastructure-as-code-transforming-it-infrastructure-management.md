@@ -5,7 +5,7 @@ publishDate: 2023-09-24
 image: 'charts-1.jpg'
 tags: ['devops', 'infrastructure as code', 'it infrastructure']
 author: marko-spasenovski
-canonicalUrl: 'https://https://mspasenovski.hashnode.dev/infrastructure-as-code-transforming-it-infrastructure-management'
+canonicalUrl: 'https://mspasenovski.hashnode.dev/infrastructure-as-code-transforming-it-infrastructure-management'
 excerpt:
   'Introduction to the concept of Infrastructure as Code. What it is, why it exists and how it revolutionized IT infrastructure management.'
 ---
