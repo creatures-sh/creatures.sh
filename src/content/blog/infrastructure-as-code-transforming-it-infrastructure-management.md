@@ -9,7 +9,7 @@ canonicalUrl: 'https://mspasenovski.hashnode.dev/infrastructure-as-code-transfor
 excerpt:
   'Introduction to the concept of Infrastructure as Code. What it is, why it exists and how it revolutionized IT infrastructure management.'
 ---
-# Wait, what do you mean by “infrastructure”?
+## Wait, what do you mean by “infrastructure”?
 
 Before we begin explaining Infrastructure as Code, we first need to define what we mean by infrastructure.
 
@@ -23,13 +23,13 @@ The two primary types of IT infrastructure are traditional and cloud infrastruct
 
 I won’t continue into details, as it would escape the scope of this article, however, I’ve linked some resources if you wish to further read up on these concepts at the end of this article.
 
-# Okay, cool, now what do you mean by “infrastructure as code”?
+## Okay, cool, now what do you mean by “infrastructure as code”?
 
 As the name implies, Infrastructure as Code (IaC, a common abbreviation) is the practice of automating and managing IT infrastructure through code, leveraging DevOps and traditional software development principles (like code versioning). It involves using a descriptive coding language to define and provide infrastructure consistently, ensuring rapid development, cost control and reliability, relative to treating infrastructure like standard application code.
 
 I mentioned it uses a **descriptive** coding language. This is not always the case, as **imperative** IaC exists and we’ll quickly discuss that at the end of this article.
 
-# History
+## History
 
 I want to take a very short detour to explain the history of deploying and maintaining software infrastructure and why the process of IaC was developed.
 
@@ -59,7 +59,7 @@ The main downside of manually setting up infrastructure was, well, obviously tha
 
 Infrastructure as Code addresses these challenges by automating the provisioning and management of infrastructure using code, enabling rapid, consistent, and error-free deployments while facilitating versioning and scalability. It represents a significant advancement in the field of IT infrastructure management.
 
-# Other benefits
+## Other benefits
 
 Besides the things we highlighted in the previous section, IaC has other benefits:
 
@@ -77,7 +77,7 @@ Ad hoc configuration updates and changes can cause a discrepancy between the env
 
 IaC is also crucial for DevOps, as it streamlines the process and CI/CD by automating provisioning. It unifies teams and ensures consistent deployments. IaC's benefits span all environments, including production. It extends DevOps principles to infrastructure, enabling rigorous testing and version control.
 
-# Declarative vs. Imperative approach
+## Declarative vs. Imperative approach
 
 Declarative usually defines “what” we want to happen, while imperative defines “how” we want the thing to happen.
 
@@ -89,7 +89,7 @@ I’m going to leave you with this fantastic analogy I read on IBM’s website:
 
 > Choosing a declarative or imperative approach is analogous to using a GPS or following turn-by-turn instructions. With a GPS, you enter an address and the GPS does the rest, plotting the fastest route and avoiding traffic for you, but you probably need an expert to tell you why it made the choices it made. The turn-by-turn instructions are based on personal experience; the provider knows the route and why he/she chose it, but if you encounter obstacles or want to optimize the route, you have to call for help or do the work yourself.
 
-# Conclusion
+## Conclusion
 
 Hey, you made it to the end! Thanks for reading my article ❤️🙏.
 
@@ -99,7 +99,7 @@ If you enjoyed this read, the next few articles I’m going to put out are going
 
 I’m going to leave you with some extra studying materials if you want to dive even deeper into IaC.
 
-# Extra resources
+## Extra resources
 
 ["Infrastructure as Code - Crash Course" by freecodecamp](https://www.youtube.com/watch?v=EtEb40LE5zQ)
 
