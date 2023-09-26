@@ -3,7 +3,7 @@ title: 'Exploring the Temporal Proposal: Modernizing Date and Time Handling in J
 updateDate: 2023-09-19
 publishDate: 2023-09-19
 image: 'chaos-1.jpg'
-tags: ['javascript', 'proposal', 'tc39']
+tags: ['javascript']
 author: paul-valladares
 canonicalUrl: 'https://www.paulvall.dev/posts/temporal-proposal'
 excerpt:
