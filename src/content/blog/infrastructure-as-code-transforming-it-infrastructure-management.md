@@ -3,7 +3,7 @@ title: 'Infrastructure as Code: Transforming IT Infrastructure Management'
 updateDate: 2023-09-24
 publishDate: 2023-09-24
 image: 'charts-1.jpg'
-tags: ['devops', 'infrastructure as code', 'it infrastructure']
+tags: ['devops']
 author: marko-spasenovski
 canonicalUrl: 'https://mspasenovski.hashnode.dev/infrastructure-as-code-transforming-it-infrastructure-management'
 excerpt:
