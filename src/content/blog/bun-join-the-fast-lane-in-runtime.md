@@ -3,7 +3,7 @@ title: 'Bun: Join the Fast Lane in Runtime'
 updateDate: 2023-09-12
 publishDate: 2023-09-12
 image: 'speed-2.jpg'
-tags: ['bun']
+tags: ['bun', 'javascript']
 author: vasko-pavic
 canonicalUrl: 'https://vaskopavic.com/blog/bun-join-the-fast-lane-in-runtime'
 excerpt:
