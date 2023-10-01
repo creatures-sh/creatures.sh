@@ -12,7 +12,20 @@ import remarkReadingTime from './src/utils/remark-reading-time'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://creatures.dev',
-  integrations: [tailwind(), sitemap(), solid(), mdx()],
+  integrations: [
+    tailwind(),
+    sitemap({
+      serialize: (page) => {
+        if (page.url.at(-1) === '/') {
+          page.url = page.url.slice(0, -1)
+        }
+
+        return page
+      },
+    }),
+    solid(),
+    mdx(),
+  ],
   output: 'hybrid',
   adapter: netlify(),
   markdown: {
