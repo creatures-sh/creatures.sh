@@ -61,7 +61,7 @@ So, what does that all mean for the generalist full-stacker today? Depends on th
 
 ## The elephant in the room - time and focus shifts
 
-My previous points may paint an interesting picture, but we all suffer from one key constraint - time and, more importantly, the time we dedicate to being focused on one single task. No matter how flexible of a skillset you possess, you still have the same hours in a day as your more specialized counterparts. Shifting your focus from writing CSS to imagining a new feature to writing a REST endpoint has a time overhead - (23 minutes, to be exact)[https://ics.uci.edu/~gmark/chi08-mark.pdf].
+My previous points may paint an interesting picture, but we all suffer from one key constraint - time and, more importantly, the time we dedicate to being focused on one single task. No matter how flexible of a skillset you possess, you still have the same hours in a day as your more specialized counterparts. Shifting your focus from writing CSS to imagining a new feature to writing a REST endpoint has a time overhead - [23 minutes, to be exact](https://ics.uci.edu/~gmark/chi08-mark.pdf).
 
 On top of that, your energy stores aren't infinite. I don't have the scientific research to prove it, but I feel more tired the more I switch context. So you're left with a choice - either plan for context switches to minimize their cost and time overhead, or you'll have to embrace the chaos and the overhead that comes with it.
 
