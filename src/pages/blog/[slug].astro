@@ -2,7 +2,7 @@
 import { twJoin } from 'tailwind-merge'
 import { format } from 'date-fns'
 import { Image } from 'astro:assets'
-import { getEntry, getCollection } from 'astro:content'
+import { getEntry, getCollection, type CollectionEntry } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
 
 import Layout from '@/components/layout.astro'
@@ -20,6 +20,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
       post,
     },
   }))
+}
+
+type Props = {
+  post: CollectionEntry<'blog'>
 }
 
 const { post } = Astro.props
@@ -48,8 +52,8 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
         type: 'article',
       },
       article: {
-        publishedTime: post.data.publishDate,
-        modifiedTime: post.data.updatedDate,
+        publishedTime: post.data.publishDate.toString(),
+        modifiedTime: post.data.updateDate.toString(),
         authors: [
           `https://twitter.com/${author?.data.twitter || '@NikolovLazar'}`,
         ],
@@ -139,7 +143,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
     </div>
     <div
       id='content'
-      class='xl:col-start-2 row-start-2 lg:row-start-1 lg:max-xl:col-span-2 prose-xl prose-slate lg:prose-xl dark:prose-invert prose-headings:no-underlinee prose-ul:list-disc prose-strong:font-bold'
+      class='xl:col-start-2 row-start-2 lg:row-start-1 lg:max-xl:col-span-2 prose-xl prose-slate dark:prose-invert prose-pre:leading-snug prose-headings:no-underline prose-ol:list-decimal prose-ul:list-disc prose-strong:font-bold'
     >
       <h1 class='max-lg:hidden mb-10 max-lg:text-center leading-tight'>
         {post.data.title}
@@ -170,12 +174,12 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
 
       if (entry.intersectionRatio > 0) {
         document
-          .querySelector(`#toc li a[href="#${id}"]`)
-          ?.parentElement?.classList.add('active')
-      } else {
+          .querySelectorAll(`#toc li`)
+          .forEach((li) => li.classList.remove('active'))
+
         document
           .querySelector(`#toc li a[href="#${id}"]`)
-          ?.parentElement?.classList.remove('active')
+          ?.parentElement?.classList.add('active')
       }
     })
   })
