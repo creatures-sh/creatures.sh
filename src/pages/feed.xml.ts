@@ -7,6 +7,7 @@ const parser = new MarkdownIt({ html: true })
 
 export async function get(context: APIContext) {
   const blog = await getCollection('blog')
+  const authors = await getCollection('authors')
 
   return rss({
     title: 'creatures.dev',
@@ -17,6 +18,9 @@ export async function get(context: APIContext) {
       description: post.data.excerpt,
       pubDate: post.data.publishDate,
       link: `/blog/${post.slug}`,
+      author:
+        authors.find((author) => author.slug === post.data.author.slug)?.data
+          .name || '',
       content: parser.render(post.body),
     })),
   })
