@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
-import netlify from '@astrojs/netlify/functions'
+import netlify from '@astrojs/netlify'
 import solid from '@astrojs/solid-js'
 import mdx from '@astrojs/mdx'
 import remarkToc from 'remark-toc'
