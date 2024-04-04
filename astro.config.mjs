@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config'
 import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
 import netlify from '@astrojs/netlify'
-import solid from '@astrojs/solid-js'
 import mdx from '@astrojs/mdx'
 import remarkToc from 'remark-toc'
 import rehypeSlug from 'rehype-slug'
@@ -23,7 +22,6 @@ export default defineConfig({
         return page
       },
     }),
-    solid(),
     mdx(),
   ],
   output: 'hybrid',

@@ -3,7 +3,6 @@ import { twJoin } from 'tailwind-merge'
 import { getCollection, type CollectionEntry } from 'astro:content'
 import type { GetStaticPaths, Page } from 'astro'
 
-// import Search from '@/components/search.tsx'
 import ContributeBanner from '@/components/contribute-banner.astro'
 import Layout from '@/components/layout.astro'
 import PostCard from '@/components/post-card.astro'
@@ -74,7 +73,6 @@ const posts: CollectionEntry<'blog'>[] = page.data
           ))
         }
       </ul>
-      <!-- <Search client:visible /> -->
     </div>
     <ul class='grid lg:grid-cols-3 gap-6 mb-20 lg:mb-40'>
       {posts.map((post) => <PostCard post={post} />)}
@@ -82,6 +80,7 @@ const posts: CollectionEntry<'blog'>[] = page.data
     <div class='flex justify-center items-center gap-6 lg:gap-12'>
       <a
         href={page.url.prev}
+        disabled={!page.url.prev}
         class={twJoin(
           'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
           !page.url.prev && 'cursor-not-allowed opacity-50',
@@ -92,6 +91,7 @@ const posts: CollectionEntry<'blog'>[] = page.data
       <p class='font-heading text-xl'>{page.currentPage} / {page.lastPage}</p>
       <a
         href={page.url.next}
+        disabled={!page.url.next}
         class={twJoin(
           'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
           !page.url.next && 'cursor-not-allowed opacity-50',

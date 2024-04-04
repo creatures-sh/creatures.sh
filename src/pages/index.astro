@@ -4,69 +4,38 @@ import Layout from '@/components/layout.astro'
 import Hero from '@/components/hero.astro'
 import DiscordBannerCTA from '@/components/discord-banner-cta.astro'
 import ContributeBanner from '@/components/contribute-banner.astro'
-import Panel from '@/components/panel.astro'
-import github from '@/components/icons/github.svg?raw'
-import twitch from '@/components/icons/twitch.svg?raw'
-import { TWITCH_URL, STREAM_PROJECT, LAST_STREAM_VOD } from '@/config'
 import PostCard from '@/components/post-card.astro'
 
-const latestPosts = (await getCollection('blog')).sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()).slice(0, 3)
+const latestPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 3)
 ---
 
 <Layout>
   <Hero />
   <div class='p-4 pb-24 lg:pb-40 relative z-10 animate-smooth-enter-bottom'>
-    <section
-      class='grid max-xl:grid-cols-2 xl:grid-cols-[300px_1fr_300px] items-center gap-6 mb-20 md:mb-40'
-    >
-      <Panel class='max-sm:col-span-2 flex flex-col p-8 gap-4 items-start'>
-        <h3 class='text-2xl'>Go to the project</h3>
-        <a
-          class='flex gap-2 py-2 px-4 md:px-8 button bg-white font-bold text-rich-black'
-          href={STREAM_PROJECT}
-          rel='external nofollow'
-        >
-          <Fragment set:html={github} />
-          GitHub
-        </a>
-      </Panel>
-      <Panel
-        size='lg'
-        class='max-xl:col-span-2 flex-1 max-xl:order-first aspect-video overflow-hidden'
-      >
-        <iframe
-          class='aspect-video'
-          width='100%'
-          height='100%'
-          src={LAST_STREAM_VOD}
-          title='YouTube video player'
-          frameborder='0'
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-          allowfullscreen></iframe>
-      </Panel>
-      <Panel class='max-sm:col-span-2 flex flex-col p-8 gap-4 items-start'>
-        <h3 class='text-2xl'>Next episode</h3>
-        <a
-          class='flex gap-2 py-2 px-4 md:px-8 button bg-twitch hover:bg-twitch-hover font-bold text-white'
-          href={TWITCH_URL}
-          rel='external nofollow'
-        >
-          <Fragment set:html={twitch} />
-          Follow on Twitch
-        </a>
-      </Panel>
-    </section>
-    <ContributeBanner class='mb-20 md:mb-40' />
     <section class='mb-20 md:mb-40'>
-      <div
-        class='flex flex-col lg:flex-row lg:justify-between items-center w-full mb-8 gap-8'
-      >
-        <h3 class='font-heading text-3xl xl:text-5xl'>Latest posts 🐙</h3>
-        <a href='/blog' class='text-link'>See all -&gt;</a>
+      <div class='flex flex-row justify-between items-center w-full mb-8 gap-8'>
+        <h3 class='font-heading text-3xl xl:text-5xl'>Community articles 🐙</h3>
+        <a href='/blog' class='button bg-link py-2 px-4 text-lg'>See all &gt;</a
+        >
       </div>
       <ul class='grid lg:grid-cols-3 gap-6'>
         {latestPosts.map((post) => <PostCard post={post} />)}
       </ul>
+    </section>
+    <ContributeBanner class='mb-20 md:mb-40' />
+    <section class='mb-20 md:mb-40 flex flex-col gap-8'>
+      <h3 class='font-heading text-3xl xl:text-5xl'>Our playlist</h3>
+      <iframe
+        style='border-radius:12px'
+        src='https://open.spotify.com/embed/playlist/2U6qC9DFk20bwhLLeh7wFO?utm_source=generator&theme=0'
+        width='100%'
+        height='352'
+        frameborder='0'
+        allowfullscreen=''
+        allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+        loading='lazy'></iframe>
     </section>
     <DiscordBannerCTA />
   </div>

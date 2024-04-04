@@ -1,6 +1,7 @@
 ---
 import { DISCORD_URL, DISCORD_MEMBERS } from '@/config'
 import { Image } from 'astro:assets'
+
 import member1 from '@/assets/discord-avatars/member-1.webp'
 import member2 from '@/assets/discord-avatars/member-2.webp'
 import member3 from '@/assets/discord-avatars/member-3.webp'
@@ -11,14 +12,14 @@ import member6 from '@/assets/discord-avatars/member-6.webp'
 const members = [member1, member2, member3, member4, member5, member6]
 ---
 
-<div class='flex flex-col items-center gap-4 lg:gap-12 py-8 px-4'>
+<div class='flex flex-col items-center gap-4 lg:gap-8 py-8 px-4'>
   <h3 class='text-3xl lg:text-5xl text-center'>Become a creature</h3>
   <div class='flex flex-col items-center gap-5 py-4'>
     <a
       href={DISCORD_URL}
       rel='external nofollow'
       class='bg-discord hover:bg-discord-hover py-4 sm:py-8 max-sm:w-full sm:px-48 text-xl sm:text-3xl font-heading text-center button shadow-hero-cta'
-      >Discord</a
+      >Join our Discord</a
     >
     <div class='flex items-center gap-2'>
       <div class='flex pl-2'>
