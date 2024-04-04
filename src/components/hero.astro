@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import { DISCORD_URL, DISCORD_MEMBERS } from '@/config'
-import hero from '@/assets/hero.jpg'
+import hero from '@/assets/hero.webp'
 ---
 
 <div class='min-h-[80vh] xl:min-h-[85vh]'>
@@ -13,6 +13,8 @@ import hero from '@/assets/hero.jpg'
       alt='Hero graphic'
       loading='eager'
       decoding='sync'
+      widths={[850, 1275, 2550]}
+      sizes={`(max-width: 1275px) 850px, (max-width: 2550px) 1275px, 2550px`}
       class='w-screen h-screen object-bottom object-cover absolute inset-0 z-0 animate-smooth-enter-top'
     />
     <div class='hero-backdrop'></div>
