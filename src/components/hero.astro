@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import { DISCORD_URL, DISCORD_MEMBERS, TWITCH_URL } from '@/config'
+import { DISCORD_URL, DISCORD_MEMBERS } from '@/config'
 import hero from '@/assets/hero.jpg'
 ---
 
@@ -11,6 +11,8 @@ import hero from '@/assets/hero.jpg'
     <Image
       src={hero}
       alt='Hero graphic'
+      loading='eager'
+      decoding='sync'
       class='w-screen h-screen object-bottom object-cover absolute inset-0 z-0 animate-smooth-enter-top'
     />
     <div class='hero-backdrop'></div>
