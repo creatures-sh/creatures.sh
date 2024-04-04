@@ -15,7 +15,9 @@ const latestPosts = (await getCollection('blog'))
   <Hero />
   <div class='p-4 pb-24 lg:pb-40 relative z-10 animate-smooth-enter-bottom'>
     <section class='mb-20 md:mb-40'>
-      <div class='flex flex-row justify-between items-center w-full mb-8 gap-8'>
+      <div
+        class='flex flex-col sm:flex-row justify-between items-center w-full mb-8 gap-8'
+      >
         <h3 class='font-heading text-3xl xl:text-5xl'>Community articles 🐙</h3>
         <a href='/blog' class='button bg-link py-2 px-4 text-lg'>See all &gt;</a
         >
