@@ -12,6 +12,16 @@ excerpt:
   for them."
 ---
 
+<iframe
+  width='100%'
+  style='aspect-ratio: 16/9'
+  src='https://www.youtube-nocookie.com/embed/lVHHpm4kuhc'
+  title='Validate Environment Variables with Zod ✅'
+  frameborder='0'
+  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+  allowfullscreen
+></iframe>
+
 Using `process.env` directly in your project means you're double or triple
 checking the names of the environment variables every time you access them. You
 also need to cast them to their correct type, since `process.env` returns all
