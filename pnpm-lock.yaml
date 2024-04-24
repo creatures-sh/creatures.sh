@@ -38,6 +38,9 @@ dependencies:
   astro:
     specifier: ^4.5.15
     version: 4.5.15(@types/node@20.12.4)(typescript@5.4.3)
+  astro-capo:
+    specifier: ^0.0.1
+    version: 0.0.1(astro@4.5.15)
   astro-seo:
     specifier: ^0.8.3
     version: 0.8.3(prettier-plugin-astro@0.13.0)(typescript@5.4.3)
@@ -2103,6 +2106,15 @@ packages:
   /astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
+    dev: false
+
+  /astro-capo@0.0.1(astro@4.5.15):
+    resolution: {integrity: sha512-KyQD1mzgEQnbqrKpYdoIZMAYejkOcIJocdGuQBH9Yzr4KqGzIR8P2DDNbV/FQXaSyq900lCZwWJH45tBIQCG8w==}
+    peerDependencies:
+      astro: '>= 2.8'
+    dependencies:
+      astro: 4.5.15(@types/node@20.12.4)(typescript@5.4.3)
+      ultrahtml: 1.3.0
     dev: false
 
   /astro-seo@0.8.3(prettier-plugin-astro@0.13.0)(typescript@5.4.3):
