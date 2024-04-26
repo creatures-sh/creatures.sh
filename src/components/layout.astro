@@ -7,6 +7,8 @@ import '@/styles/global.css'
 import Header from '@/components/header.astro'
 import Footer from '@/components/footer.astro'
 
+import { Head } from 'astro-capo'
+
 type Props = {
   class?: string
   seo?: SEOProps
@@ -41,7 +43,7 @@ const description =
 ---
 
 <html lang='en' class='dark'>
-  <head>
+  <Head>
     <meta charset='utf-8' />
     <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
     <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
@@ -89,7 +91,7 @@ const description =
         ...seo.openGraph,
       }}
     />
-  </head>
+  </Head>
   <body class='min-h-screen overflow-x-hidden bg-rich-black text-white'>
     <Header />
     <main class={twMerge('container mx-auto px-4', className)}>

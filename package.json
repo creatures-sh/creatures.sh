@@ -21,6 +21,7 @@
     "@resvg/resvg-js-linux-x64-gnu": "^2.6.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "astro": "^4.5.15",
+    "astro-capo": "^0.0.1",
     "astro-seo": "^0.8.3",
     "cal-sans": "^1.0.1",
     "date-fns": "^3.6.0",
