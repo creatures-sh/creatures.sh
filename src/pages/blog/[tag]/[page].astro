@@ -61,7 +61,7 @@ const posts: CollectionEntry<'blog'>[] = page.data
           tags.map((tag: string) => (
             <li>
               <a
-                href={`/blog/${tag}/1`}
+                href={`/blog/${tag}/1/`}
                 class={twJoin(
                   params.tag === tag && 'text-link',
                   'hover:underline capitalize',
@@ -79,7 +79,7 @@ const posts: CollectionEntry<'blog'>[] = page.data
     </ul>
     <div class='flex justify-center items-center gap-6 lg:gap-12'>
       <a
-        href={page.url.prev}
+        href={`${page.url.prev}/`}
         disabled={!page.url.prev}
         class={twJoin(
           'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
@@ -90,7 +90,7 @@ const posts: CollectionEntry<'blog'>[] = page.data
       </a>
       <p class='font-heading text-xl'>{page.currentPage} / {page.lastPage}</p>
       <a
-        href={page.url.next}
+        href={`${page.url.next}/`}
         disabled={!page.url.next}
         class={twJoin(
           'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',

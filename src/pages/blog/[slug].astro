@@ -156,7 +156,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
     {
       post.data.tags.map((tag: string) => (
         <a
-          href={`/blog/${tag}/1`}
+          href={`/blog/${tag}/1/`}
           class='px-4 py-3 bg-panel hover:bg-panel-hover rounded-full font-heading'
         >
           #{tag}
