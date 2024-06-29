@@ -16,7 +16,7 @@ export const templates: Record<string, (data?: Record<string, any>) => any> = {
           style="font-family: 'CalSans'; color: transparent; background: linear-gradient(180deg, #ffffff 34%, #A8D0FF03 90%); background-clip: text; -webkit-text-fill-color: transparent;"
           tw="text-[96px]"
         >
-          creatures.dev${data?.page}
+          creatures.sh${data?.page}
         </h1>
         <p
           style="font-family: 'CalSans'; color: rgba(255, 255, 255, 0.7)"
@@ -87,7 +87,7 @@ export const templates: Record<string, (data?: Record<string, any>) => any> = {
           style="font-family: 'CalSans'; color: transparent; background: linear-gradient(180deg, #ffffff 55%, #A8D0FF03 95%); background-clip: text; -webkit-text-fill-color: transparent;"
           tw="absolute top-12 inset-x-auto text-7xl"
         >
-          creatures.dev
+          creatures.sh
         </h1>
 
         <h2 style="font-family: 'CalSans'" tw="text-6xl text-center">

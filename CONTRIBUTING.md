@@ -1,4 +1,4 @@
-# Contributing to creatures.dev
+# Contributing to creatures.sh
 
 First off, thanks for taking the time to contribute! ❤️
 
@@ -30,25 +30,25 @@ forward to your contributions. 🎉
 ## Setting up the project
 
 1. First you'd need to Fork the repo (click the `Fork` button in the top right
-   of [this page](https://github.com/creatures-dev/creatures.dev).
+   of [this page](https://github.com/creatures-sh/creatures.sh).
 2. Clone your forked repo locally
 
 ```bash
-  git clone https://github.com/<your-username>/creatures.dev.git
-  cd creatures.dev
+  git clone https://github.com/<your-username>/creatures.sh.git
+  cd creatures.sh
 ```
 
 3. Install the dependencies by running `pnpm install` in the root of the project
 
 > If you run into issues setting up the project, feel free to reach out in our
-> [Discord server](https://discord.creatures.dev/).
+> [Discord server](https://discord.creatures.sh/).
 
 ## Contributing
 
 ### Bug reports
 
 If you find a bug in the project, please refer to the
-[Issues page](https://github.com/creatures-dev/creatures.dev/issues/) to see if
+[Issues page](https://github.com/creatures-sh/creatures.sh/issues/) to see if
 the bug has already been reported. If it's not, feel free to open an issue! Make
 sure to include steps to reproduce the bug, as well as the expected behavior. If
 you have a suggestion for how to fix the bug, please include that as well. If
@@ -57,9 +57,9 @@ the bug is a visual bug, make sure to include a screenshot as well.
 ### Blog posts
 
 If you want to write a blog post for the website, it's best to discuss it first
-in the [Discord server](https://discord.creatures.dev/). We can help you with
-the writing process and talk about your idea in depth. When you have a solid
-idea, you can start writing the article and open a PR of your first draft.
+in the [Discord server](https://discord.creatures.sh/). We can help you with the
+writing process and talk about your idea in depth. When you have a solid idea,
+you can start writing the article and open a PR of your first draft.
 
 #### Writing instructions
 
@@ -87,8 +87,7 @@ idea, you can start writing the article and open a PR of your first draft.
    - `title`: a string
    - `updateDate`: YYYY-MM-DD format string
    - `publishDate`: YYYY-MM-DD format string
-   - `image`: `'featured-[X].jpg'` where X is the number of
-     the image
+   - `image`: `'featured-[X].jpg'` where X is the number of the image
    - `tags`: [] of strings
    - `author`: the slug of the author file you created in step 2
    - `excerpt`: a string
@@ -107,17 +106,20 @@ idea, you can start writing the article and open a PR of your first draft.
 3. Make sure to add the `blog` label to your PR.
 
 4. Copy the PR link and post it in the
-   [Discord server](https://discord.creatures.dev/) in the `#blog` channel.
+   [Discord server](https://discord.creatures.sh/) in the `#blog` channel.
 
 5. We'll review your PR and give you feedback. If everything is good, we'll
    merge it and publish your article.
 
 #### Cross-posting policy
 
-Cross-posting to creatures.dev is welcomed! If you'd like to share your own article that you published elsewhere, just add the `canonicalUrl` property in the frontmatter of your article that points to your original blog post, wherever it may be. Feel free to share your PR with the rest of the community in Discord after you open it.
+Cross-posting to creatures.sh is welcomed! If you'd like to share your own
+article that you published elsewhere, just add the `canonicalUrl` property in
+the frontmatter of your article that points to your original blog post, wherever
+it may be. Feel free to share your PR with the rest of the community in Discord
+after you open it.
 
 ## License
 
-By contributing your code to the `creatures-dev/creatures.dev` GitHub
-repository, you agree to license your contribution under the
-[MIT license](./LICENSE.md).
+By contributing your code to the `creatures-sh/creatures.sh` GitHub repository,
+you agree to license your contribution under the [MIT license](./LICENSE.md).
