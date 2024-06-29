@@ -10,9 +10,9 @@ export const GET: APIRoute = async ({ site }) => {
   const authors = await getCollection('authors')
 
   return rss({
-    title: 'creatures.dev',
-    description: 'creatures.dev - a community of developers excited about code',
-    site: site?.toString() || 'https://creatures.dev',
+    title: 'creatures.sh',
+    description: 'creatures.sh - a community of developers excited about code',
+    site: site?.toString() || 'https://creatures.sh',
     items: blog.map((post) => ({
       title: post.data.title,
       description: post.data.excerpt,

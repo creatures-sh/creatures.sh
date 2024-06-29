@@ -1,6 +1,6 @@
-# creatures.dev
+# creatures.sh
 
-This repo contains the source code for the creatures.dev website. It's built
+This repo contains the source code for the creatures.sh website. It's built
 using [Astro](https://astro.build/), [Tailwind CSS](https://tailwindcss.com/),
 and it's deployed on [Netlify](https://www.netlify.com/).
 
