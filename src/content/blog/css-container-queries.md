@@ -112,7 +112,7 @@ define responsive elements that react not based on the viewport’s size, but
 based on the space they’re given, regardless of the viewport size. That means
 that you can have two instances of the same component on a page, but because of
 the different space they’re given, they’ll appear differently. Check out the
-[creatures.dev blog page](https://creatures.dev/blog/all/1/). The featured post
+[creatures.sh blog page](https://creatures.sh/blog/all/1/). The featured post
 card is the same component as the post cards in the grid below. That card is the
 card from this example, but used in production. If you want to see more use
 cases, check out

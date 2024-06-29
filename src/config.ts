@@ -1,6 +1,6 @@
-export const GITHUB_URL = 'https://github.com/creatures-dev'
-export const DISCORD_URL = 'https://discord.creatures.dev'
-export const RSS_URL = 'https://creatures.dev/feed.xml'
+export const GITHUB_URL = 'https://github.com/creatures-sh'
+export const DISCORD_URL = 'https://discord.creatures.sh'
+export const RSS_URL = 'https://creatures.sh/feed.xml'
 export const CONTRIBUTE_DOC_URL =
   'https://github.com/creatures-sh/creatures.sh/blob/main/CONTRIBUTING.md'
 export const YOUTUBE_URL = 'https://youtube.com/@nikolovlazar'

@@ -234,6 +234,6 @@ etc. If you're into JS land, try finding a local
 really fun and easy). [Here's mine](https://beerjs.mk) if you happen to be in my
 corner of the planet.
 
-If you're into online ones, here's my favorite -> https://creatures.dev. It's a
+If you're into online ones, here's my favorite -> https://creatures.sh. It's a
 community of curious developers excited about code, but that description doesn't
 do it justice or describe what it's all about. Join and see for yourself 😎

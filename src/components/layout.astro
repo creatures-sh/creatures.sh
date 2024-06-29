@@ -19,8 +19,8 @@ type Props = {
 }
 
 const title = Astro.props.seo?.title
-  ? `${Astro.props.seo?.title} | creatures.dev`
-  : 'creatures.dev - a community of developers excited about code'
+  ? `${Astro.props.seo?.title} | creatures.sh`
+  : 'creatures.sh - a community of developers excited about code'
 const { ogImage, class: className = '', seo = {} } = Astro.props
 
 const ogImageData = ogImage?.data ?? {}
@@ -39,7 +39,7 @@ const canonicalURL =
 
 const description =
   seo.description ||
-  'creatures.dev is an inclusive developer community that focuses on helping people learn and grow in a safe and welcoming environment.'
+  'creatures.sh is an inclusive developer community that focuses on helping people learn and grow in a safe and welcoming environment.'
 ---
 
 <html lang='en' class='dark'>
@@ -61,7 +61,7 @@ const description =
       rel='alternate'
       type='application/rss+xml'
       title='RSS'
-      href='https://creatures.dev/feed.xml'
+      href='https://creatures.sh/feed.xml'
     />
     <SEO
       {...seo}
@@ -86,7 +86,7 @@ const description =
         optional: {
           description,
           locale: seo.openGraph?.optional?.locale ?? 'en_US',
-          siteName: 'creatures.dev',
+          siteName: 'creatures.sh',
         },
         ...seo.openGraph,
       }}
