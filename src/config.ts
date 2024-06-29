@@ -2,9 +2,9 @@ export const GITHUB_URL = 'https://github.com/creatures-dev'
 export const DISCORD_URL = 'https://discord.creatures.dev'
 export const RSS_URL = 'https://creatures.dev/feed.xml'
 export const CONTRIBUTE_DOC_URL =
-  'https://github.com/creatures-dev/creatures.dev/blob/main/CONTRIBUTING.md'
-export const TWITCH_URL = 'https://twitch.tv/nikolovlazar'
-export const DISCORD_MEMBERS = 190
-export const STREAM_PROJECT = 'https://github.com/creatures-dev/rss2discord'
+  'https://github.com/creatures-sh/creatures.sh/blob/main/CONTRIBUTING.md'
+export const YOUTUBE_URL = 'https://youtube.com/@nikolovlazar'
+export const DISCORD_MEMBERS = 270
+export const STREAM_PROJECT = 'https://github.com/creatures-sh/rss2discord'
 export const LAST_STREAM_VOD =
   'https://www.youtube-nocookie.com/embed/XYJRXjlHUak'
