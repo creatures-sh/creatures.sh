@@ -50,26 +50,6 @@ export const templates: Record<string, (data?: Record<string, any>) => any> = {
           </svg>
           <span tw="-mt-1">Discord</span>
         </div>
-        <div
-          style="font-family: 'CalSans'; background-color: #874BF6; gap: 8px;box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25), inset 0px 4px 0px 0px rgba(255, 255, 255, 0.15);"
-          tw="flex text-2xl text-white rounded-md py-4 px-9"
-        >
-          <svg
-            width="24"
-            height="25"
-            viewBox="0 0 24 25"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M1.925 0.898926L0.3125 5.0183V21.8539H6.044V24.8989H9.26788L12.3129 21.8539H16.9696L23.2381 15.5854V0.898926H1.925ZM21.089 14.5114L17.5062 18.0927H11.7751L8.73013 21.1377V18.0927H3.8945V3.04768H21.0882V14.5114H21.089ZM17.5062 7.16743V13.4359H15.3575V7.16743H17.5062ZM11.7747 7.16743V13.4359H9.626V7.16743H11.7747Z"
-              fill="white"
-            />
-          </svg>
-          <span tw="-mt-1">Twitch</span>
-        </div>
       </div>
     </div>
   `,
