@@ -2,6 +2,7 @@
 import { twMerge } from 'tailwind-merge'
 import { SEO, type Props as SEOProps } from 'astro-seo'
 import 'cal-sans'
+import calSansSemiBold from 'cal-sans/fonts/webfonts/CalSans-SemiBold.woff2?url'
 
 import '@/styles/global.css'
 import Header from '@/components/header.astro'
@@ -90,6 +91,13 @@ const description =
         },
         ...seo.openGraph,
       }}
+    />
+    <link
+      rel='preload'
+      as='font'
+      type='font/woff2'
+      href={calSansSemiBold}
+      crossorigin='anonymous'
     />
   </Head>
   <body class='min-h-screen overflow-x-hidden bg-rich-black text-white'>
