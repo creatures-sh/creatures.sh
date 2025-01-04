@@ -19,7 +19,7 @@ export const GET: APIRoute = async ({ site }) => {
       pubDate: post.data.publishDate,
       link: `/blog/${post.slug}`,
       author:
-        authors.find((author) => author.slug === post.data.author.slug)?.data
+        authors.find((author) => author.slug === post.data.author.id)?.data
           .name || '',
       content: parser.render(post.body),
     })),
