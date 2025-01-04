@@ -97,7 +97,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
     <p class='text-tertiary lg:hidden'>・</p>
     <hr class='max-lg:hidden flex-1 border-border' />
     <p class='text-sm text-tertiary'>
-      {format(post.data.publishDate, 'MMM d')}
+      {format(post.data.publishDate, 'MMM d, yyyy')}
       ・
       {Math.round(remarkPluginFrontmatter?.estReadingTime)} min read
     </p>
