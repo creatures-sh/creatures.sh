@@ -3,5 +3,5 @@ username: nikolovlazar
 twitter: '@NikolovLazar'
 name: Lazar Nikolov
 avatar: '../../assets/authors/nikolovlazar.jpg'
-tags: ['content creator', 'devrel', 'software engineer']
+tags: ['software engineer', 'educator', 'creatures.sh founder']
 ---
