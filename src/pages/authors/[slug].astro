@@ -22,18 +22,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }))
 }
 
-const {
-  author: {
-    data: { name, username, tags, avatar },
-  },
-} = Astro.props
+const { author, class: className = '' } = Astro.props
 
-const { class: className = '' } = Astro.props
+const { name, username, tags, avatar } = author.data
 
 const posts: CollectionEntry<'blog'>[] = await getCollection('blog')
-const filteredPosts = posts.filter(
-  (post) => post.data.author.slug === Astro.params.slug,
-)
+const filteredPosts = posts
+  .filter((post) => post.data.author.slug === Astro.params.slug)
+  .sort((a, b) => b.data.updateDate - a.data.updateDate)
 const [featuredPost, ...rest] = filteredPosts
 ---
 
@@ -79,8 +75,7 @@ const [featuredPost, ...rest] = filteredPosts
     </div>
   </Panel>
   <section class='mb-32'>
-    <h2>{`Posts(${filteredPosts.length})`}</h2>
-    <!-- TODO: Breadcrumbs -->
+    <h2>{`Posts (${filteredPosts.length})`}</h2>
     <div class='my-10'></div>
     {
       filteredPosts.length > 0 ? (
