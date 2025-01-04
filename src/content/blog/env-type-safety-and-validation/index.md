@@ -155,7 +155,7 @@ to make it work.
 Now import `env` from your `env.ts` file and you got access to all of the
 environment variables and correct types for them:
 
-![Environment Variable types](/env-validation-types.png)
+![Environment Variable types](types.png)
 
 ## Exposing the Environment type
 
@@ -200,11 +200,11 @@ returns `string`, even though your `PORT` variable is defined as a `number`. At
 dev time TypeScript will tell you that the type of `process.env.PORT` is
 `number`:
 
-![Port environment variable type during dev time](/env-validation-port-type-devtime.png)
+![Port environment variable type during dev time](port-type-devtime.png)
 
 But if you log out the type at runtime you actually get a string:
 
-![Port environment variable type during runtime](/env-validation-port-type-runtime.png)
+![Port environment variable type during runtime](port-type-runtime.png)
 
 Which, as you can see, even though TypeScript says that it's a number, **you
 can't actually treat it as a number**. This can really trip you up, but you
