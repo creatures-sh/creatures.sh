@@ -12,10 +12,10 @@ const { post } = Astro.props
 
 const featuredImage = featuredImages[post.data.image]
 
-const author = await getEntry(
-  post.data.author.collection,
-  post.data.author.slug,
-)
+const author = await getEntry('authors', post.data.author.id)
+if (!author) {
+  throw new Error('Author not found')
+}
 ---
 
 <article
@@ -37,7 +37,7 @@ const author = await getEntry(
     <div class='w-full p-4 flex flex-col gap-3 @3xl:gap-6 @3xl:pr-20'>
       <div class='flex items-center gap-1.5'>
         <a
-          href={`/authors/${post.data.author.slug}/`}
+          href={`/authors/${post.data.author.id}/`}
           class='flex items-center gap-1.5 z-10 text-link font-medium hover:underline hover:underline-offset-2'
         >
           <img

@@ -12,7 +12,7 @@ import remarkReadingTime from './src/utils/remark-reading-time'
 export default defineConfig({
   site: 'https://creatures.sh',
   integrations: [tailwind(), sitemap(), mdx()],
-  output: 'hybrid',
+  output: 'static',
   adapter: netlify(),
   markdown: {
     remarkPlugins: [remarkReadingTime, remarkToc],

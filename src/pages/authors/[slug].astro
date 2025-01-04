@@ -9,6 +9,11 @@ import PostCard from '@/components/post-card.astro'
 import { getCollection, type CollectionEntry } from 'astro:content'
 import type { GetStaticPaths } from 'astro'
 
+interface Props {
+  author: CollectionEntry<'authors'>
+  class: string
+}
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const authors = await getCollection('authors')
 
@@ -28,8 +33,8 @@ const { name, username, tags, avatar } = author.data
 
 const posts: CollectionEntry<'blog'>[] = await getCollection('blog')
 const filteredPosts = posts
-  .filter((post) => post.data.author.slug === Astro.params.slug)
-  .sort((a, b) => b.data.updateDate - a.data.updateDate)
+  .filter((post) => post.data.author.id === Astro.params.slug)
+  .sort((a, b) => b.data.updateDate.getTime() - a.data.updateDate.getTime())
 const [featuredPost, ...rest] = filteredPosts
 ---
 

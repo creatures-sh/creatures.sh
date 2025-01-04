@@ -29,7 +29,7 @@ type Props = {
 const { post } = Astro.props
 const featuredImage = featuredImages[post.data.image]
 
-const author = await getEntry('authors', post.data.author.slug)
+const author = await getEntry('authors', post.data.author.id)
 
 const { Content, remarkPluginFrontmatter, headings } = await post.render()
 
@@ -82,7 +82,7 @@ const ogImageUrl = `${Astro.url.origin}/og/article.png?${new URLSearchParams({
   </h1>
   <div class='flex items-center max-lg:justify-center gap-3 my-6'>
     <a
-      href={`/authors/${post.data.author.slug}/`}
+      href={`/authors/${post.data.author.id}/`}
       class='flex items-center gap-1.5 z-10 text-link font-medium hover:underline hover:underline-offset-2'
     >
       <img

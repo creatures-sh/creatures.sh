@@ -79,8 +79,7 @@ const posts: CollectionEntry<'blog'>[] = page.data
     </ul>
     <div class='flex justify-center items-center gap-6 lg:gap-12'>
       <a
-        href={`${page.url.prev}/`}
-        disabled={!page.url.prev}
+        href={page.url.prev ? `${page.url.prev}/` : undefined}
         class={twJoin(
           'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
           !page.url.prev && 'cursor-not-allowed opacity-50',
@@ -90,8 +89,7 @@ const posts: CollectionEntry<'blog'>[] = page.data
       </a>
       <p class='font-heading text-xl'>{page.currentPage} / {page.lastPage}</p>
       <a
-        href={`${page.url.next}/`}
-        disabled={!page.url.next}
+        href={page.url.next ? `${page.url.next}/` : undefined}
         class={twJoin(
           'bg-panel hover:bg-panel-hover rounded-full px-12 py-3',
           !page.url.next && 'cursor-not-allowed opacity-50',

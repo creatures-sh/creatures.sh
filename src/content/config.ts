@@ -4,9 +4,7 @@ export const authors = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
-      avatar: image().refine((img) => img.width >= 96, {
-        message: 'Avatar must be at least 96px wide!',
-      }),
+      avatar: image(),
       name: z.string(),
       username: z.string(),
       twitter: z.string().optional(),
